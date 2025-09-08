@@ -1,0 +1,18 @@
+:root {
+  --white-color: #ffffff;
+  --highlight-color: #B9FF66;
+  --main-bg-color: #F3F3F3;
+}
+
+.think-arq-container {
+  max-width: 100%;
+  padding: 0 16px;
+  /* background-color: red; */
+}
+@media only screen and (min-width: 1199px) {
+  .think-arq-container {
+    width: calc(100% - 120px);
+    margin: 0 auto;
+    padding: 0 0;
+  }
+}
