@@ -6,10 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.15.2",
+    "husky": "^9.1.7",
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -17,6 +19,8 @@
     "swiper": "^11.2.10"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
