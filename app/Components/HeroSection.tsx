@@ -6,7 +6,7 @@ import AssociateCompanySlider from "./Common/AssociateCompanySlider";
 function HeroSection() {
   return (
     <div className="w-full h-full flex flex-col items-start justify-between">
-      <div className="w-full flex items-center justify-space-between">
+      <div className="w-full flex items-center justify-space-between think-arq-container">
         <div className="w-1/2">
           <div className="xl:max-w-[531px] flex flex-col items-start justify-start gap-9">
             <h1 className="font-space-grotesk text-4xl lg:text-5xl xl:text-6xl font-bold">

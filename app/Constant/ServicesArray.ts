@@ -7,7 +7,7 @@ export const ServicesArray: ServicesArrayInterface[] = [
     href: "/services/web-development",
     type: "link",
     target: "_self",
-    lottieIcon: "/public/lottie/search-engine-optimization.lottie",
+    lottieIcon: "/lottie/search-engine-optimization.lottie",
   },
   {
     id: "pay-per-click-advertising",
@@ -15,7 +15,7 @@ export const ServicesArray: ServicesArrayInterface[] = [
     href: "/services/web-development",
     type: "link",
     target: "_self",
-    lottieIcon: "/public/lottie/pay-per-click-advertising.lottie",
+    lottieIcon: "/lottie/pay-per-click-advertising.lottie",
   },
   {
     id: "social-media-marketing",
@@ -23,7 +23,7 @@ export const ServicesArray: ServicesArrayInterface[] = [
     href: "/services/web-development",
     type: "link",
     target: "_self",
-    lottieIcon: "/public/lottie/social-media-marketing.lottie",
+    lottieIcon: "/lottie/social-media-marketing.lottie",
   },
   {
     id: "email-marketing",
@@ -31,6 +31,6 @@ export const ServicesArray: ServicesArrayInterface[] = [
     href: "/services/web-development",
     type: "link",
     target: "_self",
-    lottieIcon: "/public/lottie/email-marketing.lottie",
+    lottieIcon: "/lottie/email-marketing.lottie",
   },
 ];

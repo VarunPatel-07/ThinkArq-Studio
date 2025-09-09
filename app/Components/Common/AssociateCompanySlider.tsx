@@ -30,29 +30,16 @@ function AssociateCompanySlider() {
 
   console.log(images);
   return (
-    <div className="pb-5">
-      <Swiper
-        modules={[Autoplay]}
-        spaceBetween={30} 
-        slidesPerView="auto" 
-        loop={true} 
-        speed={1500} 
-        autoplay={{
-          delay: 0, 
-          disableOnInteraction: false, 
-        }}
-        allowTouchMove={false}
-      >
+    <div className="pb-5 overflow-hidden">
+      <div className="flex w-[100%] animate-marquee">
         {images.map((logo, i) => (
-          <SwiperSlide key={i} className="!w-auto">
-            <div className="flex items-center justify-center w-48 h-24">
-              <picture>
-                <img src={logo?.src} alt={logo?.alt} />
-              </picture>
-            </div>
-          </SwiperSlide>
+          <div className="flex items-center justify-center w-48 h-24" key={i}>
+            <picture>
+              <img src={logo?.src} alt={logo?.alt} />
+            </picture>
+          </div>
         ))}
-      </Swiper>
+      </div>
     </div>
   );
 }
