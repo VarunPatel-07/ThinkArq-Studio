@@ -21,3 +21,10 @@ export interface ServicesArrayInterface {
   target?: "_blank" | "_self";
   lottieIcon: string;
 }
+
+
+export interface WorkingProcessArrayInterface {
+  id: number;
+  question: string;
+  answer: string;
+}
