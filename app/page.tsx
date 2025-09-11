@@ -3,6 +3,9 @@ import HeroSection from "./Components/HeroSection";
 import OurServices from "./Components/OurServices";
 import GetProposalCard from "./Components/GetProposalCard";
 import OurWorkingProcess from "./Components/OurWorkingProcess";
+import ThinkArqContactForm from "./Components/ThinkArqContactForm";
+import OurTeamIntro from "./Components/OurTeamIntro";
+import Testimonials from "./Components/Testimonials";
 
 export default function Home() {
   return (
@@ -26,6 +29,20 @@ export default function Home() {
       <div className="py-28">
         <div className="think-arq-container">
           <OurWorkingProcess />
+        </div>
+      </div>
+
+      <div className="py-28">
+        <div className="think-arq-container">
+          <OurTeamIntro />
+        </div>
+      </div>
+      <div className="py-28 bg-[#F3F3F3]">
+        <Testimonials />
+      </div>
+      <div className="py-28">
+        <div className="think-arq-container">
+          <ThinkArqContactForm />
         </div>
       </div>
     </div>

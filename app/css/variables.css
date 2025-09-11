@@ -12,6 +12,7 @@
 @media only screen and (min-width: 1199px) {
   .think-arq-container {
     width: calc(100% - 200px);
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 0;
   }
