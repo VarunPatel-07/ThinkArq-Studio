@@ -23,7 +23,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="w-1/2">
-          <Image src={HeroBannerIllustration} alt="Hero Banner Illustration" width={600} height={515} />
+          <Image src={HeroBannerIllustration} alt="Hero Banner Illustration" width={600} height={515} loading="lazy" />
         </div>
       </div>
       <AssociateCompanySlider />

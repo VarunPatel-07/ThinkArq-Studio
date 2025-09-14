@@ -1,4 +1,4 @@
-import { SetStateAction } from "react";
+import { ReactElement, SetStateAction } from "react";
 
 export interface NavbarLinksInterface {
   id: string;
@@ -49,4 +49,33 @@ export interface SearchDropProps {
   errorMessage?: string;
   disabled?: boolean;
   type?: "select" | "multi-select";
+}
+
+export interface SocialMediaLinksInterface {
+  label: string;
+  value: string;
+  icon: ReactElement;
+  link: string;
+  target: "_blank" | "_self";
+}
+
+export interface ContactUsInfoInterface {
+  id: string;
+  label: string;
+  value: string;
+  className: string;
+  link?: string;
+}
+
+export interface OurImpactInNumberInterface {
+  label: string;
+  value: string;
+  description: string;
+}
+
+export interface OurCoreValueInterface {
+  id: number;
+  title: string;
+  description: string;
+  lottieIcon?: string;
 }

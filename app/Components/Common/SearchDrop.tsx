@@ -254,8 +254,7 @@ export default function SearchDrop(props: SearchDropProps) {
                             )}
                             onClick={() => {
                               if (!isSelected) handleOnClick(option);
-                            }}
-                            aria-disabled={isSelected}>
+                            }}>
                             {typeof option === "object" ? (option as Record<string, string>)[searchKey] : option}
                           </li>
                         );

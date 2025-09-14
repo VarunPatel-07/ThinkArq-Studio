@@ -7,17 +7,17 @@ import ContactFormVector from "@/app/Assets/Images/contact-form-vector.svg";
 import BlackStarVector from "@/app/Assets/Images/black-star.svg";
 import GreenStarVector from "@/app/Assets/Images/green-star.svg";
 import SearchDrop from "./Common/SearchDrop";
+import CommanSectionHeader from "./Common/CommanSectionHeader";
 
 function ThinkArqContactForm() {
   const [formType, setFormType] = React.useState<"contact" | "quote">("contact");
   return (
     <div className="w-full h-full">
-      <div className="flex gap-5 items-center justify-start">
-        <h2 className="bg-[#B9FF66] font-space-grotesk text-5xl font-semibold p-1.5 pt-1 rounded-md">Contact Us</h2>
-        <p className="font-space-grotesk text-lg font-medium text-gray-600 max-w-[580px]">
-          Connect with Us: Let's Discuss Your <br /> Digital Marketing Needs
-        </p>
-      </div>
+      <CommanSectionHeader
+        title="Contact Us"
+        description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+      />
+
       <div className="w-full pt-20 transition-all">
         <div className="w-full h-full rounded-[45px]  bg-[#F3F3F3] overflow-hidden relative">
           <div className="w-full h-full py-16 px-24 transition-all relative z-10">
@@ -54,7 +54,7 @@ function ThinkArqContactForm() {
                       label="Select Service"
                       isRequiredField
                     />
-                    
+
                     <Input label="Phone Number" placeHolder="Phone Number" type="number" isRequiredField={true} />
                   </div>
                 )}

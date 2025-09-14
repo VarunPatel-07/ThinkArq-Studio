@@ -6,6 +6,7 @@ import OurWorkingProcess from "./Components/OurWorkingProcess";
 import ThinkArqContactForm from "./Components/ThinkArqContactForm";
 import OurTeamIntro from "./Components/OurTeamIntro";
 import Testimonials from "./Components/Testimonials";
+import Footer from "./Components/Footer";
 
 export default function Home() {
   return (
@@ -16,34 +17,37 @@ export default function Home() {
           <HeroSection />
         </div>
       </div>
-      <div className="pt-24">
+      <div className="pt-10 lg:pt-12 xl:pt-24">
         <div className="think-arq-container h-full">
           <OurServices />
         </div>
       </div>
-      <div className="py-28">
+      <div className="py-10 lg:py-12 xl:py-24">
         <div className="think-arq-container">
           <GetProposalCard />
         </div>
       </div>
-      <div className="py-28">
+      <div className="py-10 lg:py-12 xl:py-24">
         <div className="think-arq-container">
           <OurWorkingProcess />
         </div>
       </div>
 
-      <div className="py-28">
+      <div className="py-10 lg:py-12 xl:py-24">
         <div className="think-arq-container">
           <OurTeamIntro />
         </div>
       </div>
-      <div className="py-28 bg-[#F3F3F3]">
+      <div className="py-10 lg:py-12 xl:py-24 bg-[#F3F3F3]">
         <Testimonials />
       </div>
-      <div className="py-28">
+      <div className="pt-10 lg:pt-12 xl:pt-24">
         <div className="think-arq-container">
           <ThinkArqContactForm />
         </div>
+      </div>
+      <div className="w-full">
+        <Footer />
       </div>
     </div>
   );
