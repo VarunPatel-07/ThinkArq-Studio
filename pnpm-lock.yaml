@@ -38,6 +38,9 @@ importers:
       swiper:
         specifier: ^11.2.10
         version: 11.2.10
+      tailwind-merge:
+        specifier: ^3.3.1
+        version: 3.3.1
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.8.1
@@ -2089,6 +2092,9 @@ packages:
   swiper@11.2.10:
     resolution: {integrity: sha512-RMeVUUjTQH+6N3ckimK93oxz6Sn5la4aDlgPzB+rBrG/smPdCTicXyhxa+woIpopz+jewEloiEE3lKo1h9w2YQ==}
     engines: {node: '>= 4.7.0'}
+
+  tailwind-merge@3.3.1:
+    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
 
   tailwindcss@4.1.12:
     resolution: {integrity: sha512-DzFtxOi+7NsFf7DBtI3BJsynR+0Yp6etH+nRPTbpWnS2pZBaSksv/JGctNwSWzbFjp0vxSqknaUylseZqMDGrA==}
@@ -4401,6 +4407,8 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0: {}
 
   swiper@11.2.10: {}
+
+  tailwind-merge@3.3.1: {}
 
   tailwindcss@4.1.12: {}
 

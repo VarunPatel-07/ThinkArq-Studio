@@ -1,7 +1,8 @@
 :root {
   --white-color: #ffffff;
-  --highlight-color: #B9FF66;
-  --main-bg-color: #F3F3F3;
+  --highlight-color: #b9ff66;
+  --main-bg-color: #f3f3f3;
+  --theme-black-color: #191a23;
 }
 
 .think-arq-container {

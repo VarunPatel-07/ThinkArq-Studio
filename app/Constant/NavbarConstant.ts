@@ -2,7 +2,7 @@ import { NavbarLinksInterface } from "../interface/interface";
 
 export const NavbarLinks: NavbarLinksInterface[] = [
   { id: "home", label: "Home", href: "/", type: "link", target: "_self", dropDown: [] },
-  { id: "about", label: "About", href: "/about", type: "link", target: "_self", dropDown: [] },
+  { id: "about", label: "About", href: "/about-us", type: "link", target: "_self", dropDown: [] },
   {
     id: "services",
     label: "Services",

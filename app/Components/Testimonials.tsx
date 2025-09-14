@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
+import CommanSectionHeader from "./Common/CommanSectionHeader";
 
 function Testimonials() {
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -15,13 +16,10 @@ function Testimonials() {
   return (
     <div className="w-full h-full">
       <div className="flex items-center justify-between think-arq-container">
-        <div className="flex gap-5 items-center justify-start">
-          <h2 className="bg-[#B9FF66] font-space-grotesk text-5xl font-semibold p-1.5 pt-1 rounded-md">Team</h2>
-          <p className="font-space-grotesk text-lg font-medium text-gray-600 max-w-[580px]">
-            Meet the skilled and experienced team behind our <br />
-            successful digital marketing strategies
-          </p>
-        </div>
+        <CommanSectionHeader
+          title="Testimonials"
+          description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+        />
         <div className="flex items-center justify-end gap-5">
           <button
             ref={prevRef}

@@ -2,6 +2,7 @@
 import { classNames } from "@/app/Helper/Helper";
 import { WorkingProcessArrayInterface } from "@/app/interface/interface";
 import React from "react";
+import { FaArrowDown } from "react-icons/fa";
 
 function RenderFaq({ data }: { data: WorkingProcessArrayInterface[] }) {
   const [currentOpen, setCurrentOpen] = React.useState<number>(1);
@@ -26,12 +27,15 @@ function RenderFaq({ data }: { data: WorkingProcessArrayInterface[] }) {
               <span className="text-5xl">{faq?.id > 9 ? faq?.id : `0${faq?.id}`}</span>
               <span className="text-2xl">{faq.question}</span>
             </span>
-            <span className="ml-2">{currentOpen === faq?.id ? "−" : "+"}</span>
+            {/* <span className="ml-2">{currentOpen === faq?.id ? "−" : "+"}</span> */}
+            <span className={classNames("flex transition-all duration-500", { "rotate-180": currentOpen === faq?.id })}>
+              <FaArrowDown className="min-w-6 min-h-6 max-w-6 max-h-6" />
+            </span>
           </button>
 
           {/* Animated Answer */}
           <div
-            className={classNames("transition-all duration-300 ease-in-out overflow-hidden text-gray-600", {
+            className={classNames("transition-all duration-500 ease-in-out overflow-hidden text-gray-600", {
               "max-h-0": currentOpen !== faq?.id,
               "max-h-[500px] border-t border-t-black": currentOpen === faq?.id, // adjust this value if needed
             })}>

@@ -16,7 +16,7 @@ function RenderNavbarDropDown(props: RenderLinkDropDownInterface) {
   }, [isParentOpen]);
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative px-2.5 py-0.5 pb-1 rounded-md">
       <div className="flex items-center justify-center gap-1.5">
         <button
           key={link.id}
