@@ -1,9 +1,5 @@
 "use client";
-import path from "path";
 import React from "react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 function AssociateCompanySlider() {
@@ -30,29 +26,18 @@ function AssociateCompanySlider() {
 
   console.log(images);
   return (
-    <div className="pb-5">
-      <Swiper
-        modules={[Autoplay]}
-        spaceBetween={30} 
-        slidesPerView="auto" 
-        loop={true} 
-        speed={1500} 
-        autoplay={{
-          delay: 0, 
-          disableOnInteraction: false, 
-        }}
-        allowTouchMove={false}
-      >
-        {images.map((logo, i) => (
-          <SwiperSlide key={i} className="!w-auto">
-            <div className="flex items-center justify-center w-48 h-24">
+    <div className="pb-5 overflow-hidden">
+      <div className="flex w-[100%] animate-marquee">
+        {Array?.from({ length: 5 })?.map(() =>
+          images.map((logo, i) => (
+            <div className="flex items-center justify-center w-48 h-24" key={i}>
               <picture>
                 <img src={logo?.src} alt={logo?.alt} />
               </picture>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          ))
+        )}
+      </div>
     </div>
   );
 }
