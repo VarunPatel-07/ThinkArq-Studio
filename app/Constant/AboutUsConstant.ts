@@ -33,13 +33,13 @@ export const OurCoreValueArray: OurCoreValueInterface[] = [
     id: 2,
     title: "Integrity",
     description: "We uphold honesty and transparency in all our actions, building trust with our clients and team.",
-    lottieIcon: "/lottie/transparency.lottie",
+    lottieIcon: "/Lottie/transparency.lottie",
   },
   {
     id: 3,
     title: "Collaboration",
     description: "We believe in teamwork, fostering a culture of open communication and shared success.",
-    lottieIcon: "/lottie/collaboration.lottie",
+    lottieIcon: "/Lottie/collaboration.lottie",
   },
   {
     id: 4,

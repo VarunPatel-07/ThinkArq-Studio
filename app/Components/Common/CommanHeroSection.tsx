@@ -23,7 +23,7 @@ function CommanHeroSection({
         <div className="w-full h-full flex flex-col md:flex-row items-center gap-7 justify-center">
           <div className="w-full lg:w-1/2">
             <DotLottieReact
-              src={heroImage || "/lottie/together-for-success.lottie"}
+              src={heroImage || "/Lottie/together-for-success.lottie"}
               loop
               autoplay
               className="w-full h-full"
