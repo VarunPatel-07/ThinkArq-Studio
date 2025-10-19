@@ -18,6 +18,7 @@ export interface RenderLinkDropDownInterface {
 export interface ServicesArrayInterface {
   id: string;
   label: string[];
+  text: string;
   href: string;
   type: "button" | "link";
   target?: "_blank" | "_self";

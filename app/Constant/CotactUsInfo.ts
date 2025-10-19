@@ -20,6 +20,6 @@ export const ContactUsSectionInfo: ContactUsInfoInterface[] = [
     id: "address",
     label: "Address",
     value: "123, MG Road, Bengaluru, Karnataka, India",
-    className: "flex-col items-start justify-start",
+    className: "lg:flex-col items-start justify-start",
   },
 ];

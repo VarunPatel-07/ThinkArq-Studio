@@ -4,10 +4,10 @@ import Image from "next/image";
 
 export default function TestimonialsCard() {
   return (
-    <div className="w-full h-full overflow-hidden rounded-[45px] py-10 px-9 bg-[#191A23]">
+    <div className="w-full h-full overflow-hidden rounded-[30px] lg:rounded-[45px] p-6 md:py-10 md:px-9 bg-[#191A23]">
       <div className="w-full">
         <div className="w-full pb-7 border-b border-b-white">
-          <p className="font-space-grotesk text-lg text-white">
+          <p className="font-space-grotesk text-base lg:text-lg text-white">
             We have been working with Positivus for the past year and have seen a significant increase in website
             traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about
             the success of our business. We highly recommend Positivus to any company looking to grow their online

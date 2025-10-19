@@ -20,8 +20,8 @@ function ThinkArqContactForm() {
 
       <div className="w-full pt-20 transition-all">
         <div className="w-full h-full rounded-[45px]  bg-[#F3F3F3] overflow-hidden relative">
-          <div className="w-full h-full py-16 px-24 transition-all relative z-10">
-            <div className="w-full max-w-[600px] transition-all">
+          <div className="w-full h-full p-10 md:py-16 md:px-24 transition-all relative z-10">
+            <div className="w-full lg:max-w-[600px] transition-all">
               <div className="flex items-center justify-start gap-10 mb-10">
                 <button className="flex items-center justify-start gap-3" onClick={() => setFormType("contact")}>
                   <span className="min-w-7 min-h-7 max-w-7 max-h-7 rounded-full border border-black cursor-pointer flex items-center justify-center">
