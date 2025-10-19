@@ -36,7 +36,7 @@ function LetsConnect() {
           </div>
         </div>
         <div className="w-full lg:w-1/2 hidden lg:flex">
-          <DotLottieReact src="/lottie/team.lottie" loop autoplay className="w-full h-full hidden md:flex" />
+          <DotLottieReact src="/lottie/lets-connect" loop autoplay className="w-full h-full hidden md:flex" />
         </div>
       </div>
     </div>
