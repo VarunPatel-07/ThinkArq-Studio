@@ -5,7 +5,7 @@ import { TfiLinkedin } from "react-icons/tfi";
 
 function TeamCommonCard() {
   return (
-    <div className="w-full h-full overflow-hidden rounded-[45px] border border-b-8 border-[#191A23] py-10 px-9 cursor-pointer transition-all duration-500 hover:shadow-2xl">
+    <div className="w-full h-full overflow-hidden rounded-[30px] lg:rounded-[45px] border border-b-8 border-[#191A23] p-6 lg:py-10 lg:px-9 cursor-pointer transition-all duration-500 hover:shadow-2xl">
       <div className="w-full flex flex-col items-start justify-start">
         <div className="w-full flex items-stretch justify-start gap-5 pb-7 border-b-2 border-b-[#191A23]">
           <Image src={DemoImage} alt="Demo Image" width={120} height={120} />
