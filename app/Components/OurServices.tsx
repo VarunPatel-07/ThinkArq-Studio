@@ -1,27 +1,39 @@
 "use client";
 import React from "react";
-import { ServicesArray } from "../Constant/ServicesArray";
 import { classNames, getServiceBg } from "../Helper/Helper";
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
 import CommanSectionHeader from "./Common/CommanSectionHeader";
-const DotLottieReact = React.lazy(() =>
-  import("@lottiefiles/dotlottie-react").then((mod) => ({
-    default: mod.DotLottieReact,
-  }))
-);
-function OurServices() {
+import { ServicesArrayInterface } from "../interface/interface";
+import dynamic from "next/dynamic";
+
+// Dynamically import with SSR disabled
+const DotLottieReact = dynamic(() => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact), {
+  ssr: false,
+});
+
+function OurServices({
+  title,
+  description,
+  ServicesData,
+}: {
+  title?: string;
+  description?: string;
+  ServicesData: ServicesArrayInterface[];
+}) {
   return (
     <div className="w-full">
       <div className="w-full">
         <CommanSectionHeader
-          title="Services"
-          description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online.
-          These services include:"
+          title={title || "Services"}
+          description={
+            description ||
+            "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+          }
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-16">
-        {ServicesArray?.map((services, index) => (
+        {ServicesData?.map((services, index) => (
           <div
             key={services?.id}
             className="w-full h-full flex items-center justify-center cursor-pointer rounded-4xl transition-all duration-500 group hover:shadow-2xl">
@@ -32,7 +44,7 @@ function OurServices() {
               })}>
               <div className="flex items-stretch justify-start gap-4">
                 <div className="grow">
-                  <div className="w-full h-full flex flex-col items-start justify-between">
+                  <div className="w-full h-full flex flex-col items-start justify-between gap-sm-20">
                     <h3 className="font-space-grotesk text-2xl font-semibold flex flex-col gap-1 items-start justify-start">
                       {services?.label?.map((text, i) => (
                         <span
@@ -56,7 +68,7 @@ function OurServices() {
                     </Link>
                   </div>
                 </div>
-                <div className="min-w-[210px] min-h-[210px] w-[210px] h-[210px]">
+                <div className="min-w-[210px] min-h-[210px] w-[210px] h-[210px] d-sm-block">
                   <DotLottieReact
                     src={services?.lottieIcon}
                     loop

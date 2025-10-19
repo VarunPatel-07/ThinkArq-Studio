@@ -7,6 +7,7 @@ import ThinkArqContactForm from "./Components/ThinkArqContactForm";
 import OurTeamIntro from "./Components/OurTeamIntro";
 import Testimonials from "./Components/Testimonials";
 import Footer from "./Components/Footer";
+import { ServicesArray } from "./Constant/ServicesArray";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
       </div>
       <div className="pt-10 lg:pt-12 xl:pt-24">
         <div className="think-arq-container h-full">
-          <OurServices />
+          <OurServices ServicesData={ServicesArray} />
         </div>
       </div>
       <div className="py-10 lg:py-12 xl:py-24">
