@@ -13,7 +13,7 @@ function page() {
       <Navbar />
       <div className="pt-[90px]">
         <CommanHeroSection
-          heroImage="/lottie/together-for-success.lottie"
+          heroImage="/Lottie/together-for-success.lottie"
           title="Together For Success"
           descriptions="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos totam nostrum blanditiis consequuntur nulla aliquam, ullam dolores saepe voluptate debitis voluptatibus adipisci nesciunt fugit et consequatur ea assumenda sed perferendis molestias, fugiat, qui aperiam neque. Natus similique doloribus iste placeat adipisci, repudiandae non ratione."
         />
