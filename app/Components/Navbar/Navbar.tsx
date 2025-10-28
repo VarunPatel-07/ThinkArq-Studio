@@ -17,9 +17,9 @@ function Navbar() {
     <nav className="w-full border-b border-b-black/10 fixed top-0 left-0 bg-white z-50">
       <div className="think-arq-container">
         <div className="w-full flex items-center justify-between py-4">
-          <div className="w-fit h-fit -ml-1">
+          <Link href={'/'} className="w-fit h-fit -ml-1">
             <Image src={ThinkArqLogo} alt="ThinkArq Logo" width={140} height={50} />
-          </div>
+          </Link>
           <div
             className={classNames("w-fit h-fit flex gap-5 text-lg font-medium navbar-custom-css ", {
               active: showMobileNavbar,

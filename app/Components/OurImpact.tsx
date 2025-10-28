@@ -13,7 +13,9 @@ function OurImpact() {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-5 pt-16">
         {OurImpactInNumber?.map((data) => (
-          <div key={data?.label} className="w-full h-full rounded-3xl p-6 bg-[#F3F3F3] border border-[va(--theme-black-color)]">
+          <div
+            key={data?.label}
+            className="w-full h-full rounded-[15px] md:rounded-[24px]  p-6 bg-[#F3F3F3] border border-[va(--theme-black-color)]">
             <div className="w-full h-full flex flex-col items-start justify-start gap-1">
               <h3 className="font-space-grotesk text-4xl text-black font-bold">{data?.value}</h3>
               <p className="font-space-grotesk text-base">{data?.description}</p>

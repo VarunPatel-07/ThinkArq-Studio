@@ -23,6 +23,24 @@ export interface ServicesArrayInterface {
   type: "button" | "link";
   target?: "_blank" | "_self";
   lottieIcon: string;
+  services_title: string;
+  services_description: string | string[];
+  how_we_work: {
+    title: string;
+    description: string;
+  }[];
+  how_we_work_title: string;
+  how_we_work_description: string;
+  shadow_title: string;
+  other_service_title: string;
+  other_service_description: string;
+  lets_connect: {
+    title: string;
+    description: string;
+    sub_title: string;
+    cta_button: string;
+    lottieIcon: string;
+  };
 }
 
 export interface WorkingProcessArrayInterface {
@@ -66,6 +84,7 @@ export interface ContactUsInfoInterface {
   value: string;
   className: string;
   link?: string;
+  target?: "_self" | "_blank";
 }
 
 export interface OurImpactInNumberInterface {
@@ -79,4 +98,17 @@ export interface OurCoreValueInterface {
   title: string;
   description: string;
   lottieIcon?: string;
+}
+
+export interface PrivacyPolicyDataInterface {
+  id: number;
+  title: string;
+  description: string;
+  bulletPoints: string[];
+}
+
+export interface OwnerInfoDataInterface {
+  id: number;
+  label: string;
+  value: string;
 }

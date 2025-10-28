@@ -5,7 +5,7 @@ import { TfiLinkedin } from "react-icons/tfi";
 
 function TeamCommonCard() {
   return (
-    <div className="w-full h-full overflow-hidden rounded-[30px] lg:rounded-[45px] border border-b-8 border-[#191A23] p-6 lg:py-10 lg:px-9 cursor-pointer transition-all duration-500 hover:shadow-2xl">
+    <div className="w-full h-full overflow-hidden rounded-[15px] md:rounded-[30px] lg:rounded-[45px] border border-b-8 border-[#191A23] p-6 lg:py-10 lg:px-9 cursor-pointer transition-all duration-500 hover:shadow-2xl">
       <div className="w-full flex flex-col items-start justify-start">
         <div className="w-full flex items-stretch justify-start gap-5 pb-7 border-b-2 border-b-[#191A23]">
           <Image src={DemoImage} alt="Demo Image" width={120} height={120} />
@@ -24,9 +24,9 @@ function TeamCommonCard() {
           </div>
         </div>
         <div className="w-full pt-7">
-            <p className="font-space-grotesk text-base font-medium text-black/70">
-                10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy
-            </p>
+          <p className="font-space-grotesk text-base font-medium text-black/70">
+            10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy
+          </p>
         </div>
       </div>
     </div>
