@@ -228,7 +228,7 @@ export default function SearchDrop(props: SearchDropProps) {
                   filteredOptions.length > 0 ? (
                     <VirtualList
                       ref={virtualListRef}
-                      height={filteredOptions?.length >= 4 ? 300 : filteredOptions?.length * 50}
+                      height={filteredOptions?.length >= 5 ? 300 : filteredOptions?.length * 50}
                       itemCount={filteredOptions?.length}
                       itemSize={50}
                       width={"100%"}
@@ -246,10 +246,10 @@ export default function SearchDrop(props: SearchDropProps) {
                             className={classNames(
                               "px-3 py-2 cursor-pointer w-full text-black text-nowrap text-ellipsis overflow-hidden font-space-grotesk text-lg",
                               {
-                                "bg-[var(--them-green-color)] text-white hover:!bg-[var(--them-green-color)] !cursor-not-allowed opacity-70":
+                                "bg-green-700 text-white hover:!bg-green-700 !cursor-not-allowed opacity-70":
                                   isSelected,
                                 "hover:bg-[#7fab98]/20 hover:text-black": !isSelected && highlightIndex !== index,
-                                "bg-[#7fab98]/20 text-black": highlightIndex === index && !isSelected,
+                                "!bg-black text-white": highlightIndex === index && !isSelected,
                               }
                             )}
                             onClick={() => {

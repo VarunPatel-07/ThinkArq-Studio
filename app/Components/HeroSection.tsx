@@ -10,15 +10,14 @@ function HeroSection() {
         <div className="w-full md:w-1/2 pb-14 md:pb-0">
           <div className="xl:max-w-[531px] flex flex-col items-start justify-start gap-6 md:gap-9">
             <h1 className="font-space-grotesk text-4xl lg:text-5xl xl:text-6xl font-bold">
-              <span className="block">Navigating the</span> <span className="block">digital landscape</span>{" "}
-              <span className="block">for success</span>
+              <span className="block">Think.</span> <span className="block">Build.</span>{" "}
+              <span className="block">Disrupt.</span>
             </h1>
             <p className="font-space-grotesk text-lg md:mt-4 text-gray-600">
-              Our digital marketing agency helps businesses grow and succeed online through a range of services
-              including SEO, PPC, social media marketing, and content creation.
+              From clean UI/UX and robust web apps to AI innovation and digital marketing strategies, we build digital ecosystems that help brands stand out and scale.
             </p>
             <button className="font-space-grotesk text-xl pt-2.5 pb-3 px-8 text-white bg-[#191A23] rounded-lg border-0">
-              Book a consultation
+              Book A Consultation
             </button>
           </div>
         </div>

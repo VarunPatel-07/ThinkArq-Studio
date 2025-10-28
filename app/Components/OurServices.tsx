@@ -36,11 +36,11 @@ function OurServices({
         {ServicesData?.map((services, index) => (
           <div
             key={services?.id}
-            className="w-full h-full flex items-center justify-center cursor-pointer rounded-4xl transition-all duration-500 group hover:shadow-2xl">
+            className="w-full h-full flex items-center justify-center cursor-pointer rounded-[15px] md:rounded-[32px] transition-all duration-500 group hover:shadow-2xl odd:!bg-[#B9FF66] even:bg-[#F3F3F3]">
             <div
-              className={classNames(`w-full p-8 rounded-4xl border border-b-8 border-[#191A23]`, {
-                "bg-[#B9FF66]": !getServiceBg(index),
-                "bg-[#F3F3F3]": getServiceBg(index),
+              className={classNames(`w-full p-8 rounded-[15px] md:rounded-[32px] border border-b-8 border-[#191A23]`, {
+                "md:bg-[#B9FF66]": !getServiceBg(index),
+                "md:bg-[#F3F3F3]": getServiceBg(index),
               })}>
               <div className="flex items-stretch justify-start gap-4">
                 <div className="grow">
