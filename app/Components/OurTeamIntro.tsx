@@ -10,7 +10,7 @@ function OurTeamIntro() {
         description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
       />
      
-      <div className="w-full pt-20 transition-all">
+      <div className="w-full pt-8 lg:pt-14 xl:pt-20 transition-all">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-5 xl:gap-10">
           {Array?.from({ length: 6 })?.map((_, index) => (
             <TeamCommonCard key={index} />

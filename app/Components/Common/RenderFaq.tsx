@@ -17,7 +17,7 @@ function RenderFaq({ data }: { data: WorkingProcessArrayInterface[] }) {
         <div
           key={faq?.id}
           className={classNames(
-            "overflow-hidden rounded-[30px] lg:rounded-[45px] border border-b-8 border-[#191A23] transition-all duration-300 px-8 md:px-12 lg:px-16",
+            "overflow-hidden rounded-[15px] md:rounded-[30px] lg:rounded-[45px] border border-b-8 border-[#191A23] transition-all duration-300 px-8 md:px-12 lg:px-16",
             { "bg-[#F3F3F3]": currentOpen !== faq?.id, "bg-[#B9FF66]": currentOpen === faq?.id }
           )}>
           <button

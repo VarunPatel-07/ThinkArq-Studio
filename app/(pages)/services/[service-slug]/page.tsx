@@ -25,21 +25,30 @@ export default function Page({ params }: { params: { "service-slug": string } })
       <div className="pt-[90px]">
         <CommanHeroSection
           heroImage={data?.lottieIcon}
-          title="Together For Success"
-          descriptions="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos totam nostrum blanditiis consequuntur nulla aliquam, ullam dolores saepe voluptate debitis voluptatibus adipisci nesciunt fugit et consequatur ea assumenda sed perferendis molestias, fugiat, qui aperiam neque. Natus similique doloribus iste placeat adipisci, repudiandae non ratione."
+          title={data?.services_title}
+          descriptions={data?.services_description}
         />
       </div>
       <div className="pt-10 lg:pt-12 xl:pt-24">
-        <HowWeWork />
+        <h2 className="hidden">{data?.shadow_title}</h2>
+        <HowWeWork
+          data={data?.how_we_work}
+          comanSectionTitle={data?.how_we_work_title}
+          comanSectionDescription={data?.how_we_work_description}
+        />
       </div>
       <div className="pt-10 lg:pt-12 xl:pt-24">
         <div className="think-arq-container h-full">
-          <OurServices ServicesData={ServicesArray.filter((item) => item.id !== slug)} />
+          <OurServices
+            title={data?.other_service_title}
+            description={data?.other_service_description}
+            ServicesData={ServicesArray.filter((item) => item.id !== slug)}
+          />
         </div>
       </div>
       <div className="pt-10 lg:pt-12 xl:pt-24">
         <div className="think-arq-container h-full">
-          <LetsConnect />
+          <LetsConnect data={data?.lets_connect} />
         </div>
       </div>
       <Footer />

@@ -15,12 +15,12 @@ function CommanHeroSection({
 }: {
   heroImage: string;
   title: string;
-  descriptions: string;
+  descriptions: string | string[];
 }) {
   return (
     <div className="think-arq-container">
-      <div className="p-14 bg-[#F3F3F3] rounded-[45px]">
-        <div className="w-full h-full flex flex-col md:flex-row items-center gap-7 justify-center">
+      <div className="p-6 md:p-10 lg:p-14 bg-[#F3F3F3] rounded-[15px] md:rounded-[30px] lg:rounded-[45px]">
+        <div className="w-full h-full flex flex-col md:flex-row items-center gap-3 justify-center md:gap-5 lg:gap-7">
           <div className="w-full lg:w-1/2">
             <DotLottieReact
               src={heroImage || "/Lottie/together-for-success.lottie"}
@@ -32,10 +32,24 @@ function CommanHeroSection({
             />
           </div>
           <div className="w-full lg:w-1/2">
-            <h1 className="font-space-grotesk text-3xl lg:text-4xl xl:text-6xl leading-[36px] lg:leading-[44px] xl:leading-[70px] font-medium text-black">
+            <h1 className="font-space-grotesk text-3xl lg:text-[42px] leading-[36px] lg:leading-[55px]   font-medium text-black">
               {title}
             </h1>
-            <p className="pt-4 lg:pt-6 xl:pt-8 font-space-grotesk text-base lg:text-lg">{descriptions}</p>
+            {Array.isArray(descriptions) ? (
+              <>
+                <div className="pt-4 lg:pt-6 xl:pt-8 flex flex-col items-start justify-start gap-2.5">
+                  {descriptions?.map((item, index) => (
+                    <p className="font-space-grotesk text-base lg:text-lg" key={index}>
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="pt-4 lg:pt-6 xl:pt-8 font-space-grotesk text-base lg:text-lg">{descriptions}</p>
+              </>
+            )}
           </div>
         </div>
       </div>
