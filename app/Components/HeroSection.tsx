@@ -14,7 +14,7 @@ function HeroSection() {
               <span className="block">Disrupt.</span>
             </h1>
             <p className="font-space-grotesk text-lg md:mt-4 text-gray-600">
-              From clean UI/UX and robust web apps to AI innovation and digital marketing strategies, we build digital ecosystems that help brands stand out and scale.
+              At Think Arq, we blend creativity with intelligence — delivering sleek UI/UX, robust web and software solutions, AI and data-driven insights, and growth-focused digital marketing to help businesses scale smarter.
             </p>
             <button className="font-space-grotesk text-xl pt-2.5 pb-3 px-8 text-white bg-[#191A23] rounded-lg border-0">
               Book A Consultation

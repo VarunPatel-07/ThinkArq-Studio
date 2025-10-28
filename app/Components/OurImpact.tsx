@@ -7,8 +7,8 @@ function OurImpact() {
     <div className="think-arq-container">
       <div className="w-full h-full">
         <CommanSectionHeader
-          title="Our Impact In Number"
-          description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+          title="Our Impact in Numbers"
+          description="At Think Arq, we don’t just market brands, we build digital excellence. Our services span across UI/UX design, web and software development, AI-driven solutions, and digital marketing. All crafted to help businesses innovate, scale, and succeed in the digital era."
         />
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-5 pt-16">

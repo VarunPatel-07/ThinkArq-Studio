@@ -14,8 +14,8 @@ function page() {
       <div className="pt-[90px]">
         <CommanHeroSection
           heroImage="/Lottie/together-for-success.lottie"
-          title="Together For Success"
-          descriptions="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos totam nostrum blanditiis consequuntur nulla aliquam, ullam dolores saepe voluptate debitis voluptatibus adipisci nesciunt fugit et consequatur ea assumenda sed perferendis molestias, fugiat, qui aperiam neque. Natus similique doloribus iste placeat adipisci, repudiandae non ratione."
+          title="At Think Arq, we architect ideas into reality."
+          descriptions="Whether it’s a sleek web app, a smart AI solution, or a bold marketing campaign — we design, develop, and deliver digital products that leave an impression. We think ahead, code with precision, and market with purpose."
         />
       </div>
       <div className="py-10 lg:py-12 xl:py-24">
