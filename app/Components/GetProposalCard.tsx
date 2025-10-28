@@ -8,8 +8,7 @@ function GetProposalCard() {
       <div className="flex flex-col items-start justify-start gap-6 w-full lg:w-1/2">
         <h2 className="text-2xl font-semibold text-center">Let’s make things happen</h2>
         <p className="text-start text-lg text-gray-600">
-          Contact us today to learn more about how our digital marketing services can help your business grow and
-          succeed online.
+          Let’s build something extraordinary — connect with Think Arq to explore how our web, AI, data, and marketing solutions can elevate your brand and accelerate growth.
         </p>
         <button className="font-space-grotesk text-xl pt-2.5 pb-3 px-8 text-white bg-[#191A23] rounded-lg border-0 cursor-pointer">
           Get Your Free Proposal
