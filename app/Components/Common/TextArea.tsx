@@ -41,7 +41,7 @@ function TextArea({
       <textarea
         value={typeof value == "string" ? value : ""}
         onChange={setValue ? handelOnChangeFunction : onChange}
-        className="border border-gray-500 rounded-lg md:rounded-xl px-7 py-3 bg-white w-full placeholder:text-[#898989] text-black focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-[#191A23] font-space-grotesk text-lg resize-none"
+        className="border border-black/30 rounded-lg md:rounded-xl px-7 py-3 bg-white w-full placeholder:text-[#898989] text-black focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-[#191A23] font-space-grotesk text-lg resize-none"
         placeholder={placeHolder}
         cols={cols}
         rows={rows}></textarea>

@@ -1,7 +1,8 @@
 import React from "react";
-import DemoImage from "@/app/Assets/Images/Team-Member-Images/demo.png";
+import DemoImage from "@/app/Assets/Images/Team-Member-Images/demo.webp";
 import Image from "next/image";
 import { TfiLinkedin } from "react-icons/tfi";
+import Link from "next/link";
 
 function TeamCommonCard() {
   return (
@@ -11,11 +12,12 @@ function TeamCommonCard() {
           <Image src={DemoImage} alt="Demo Image" width={120} height={120} />
           <div className="flex flex-col items-start justify-between grow">
             <div className="w-full flex items-end justify-end">
-              <a
-                href=""
+              <Link
+                href="/"
+                aria-label="LinkedIn Icon"
                 className="flex items-center justify-center rounded-full min-w-9 min-h-9 max-w-9 max-h-9 bg-[#191A23]">
-                <TfiLinkedin className="text-[#B9FF66] min-w-5 min-h-5 max-w-5 max-h-5" />
-              </a>
+                <TfiLinkedin className="text-[#B9FF66] min-w-5 min-h-5 max-w-5 max-h-5" aria-hidden="true" />
+              </Link>
             </div>
             <div className="flex flex-col items-start justify-start gap-1">
               <span className="font-space-grotesk text-xl font-semibold">John Smith</span>

@@ -1,5 +1,7 @@
 "use client";
-import React from "react";
+
+import React, { useEffect, useRef, useState } from "react";
+import countryData from "@/app/data/country-info.json";
 import Input from "./Common/Input";
 import TextArea from "./Common/TextArea";
 import Image from "next/image";
@@ -9,17 +11,39 @@ import GreenStarVector from "@/app/Assets/Images/green-star.svg";
 import SearchDrop from "./Common/SearchDrop";
 import CommanSectionHeader from "./Common/CommanSectionHeader";
 import { ServicesArray } from "../Constant/ServicesArray";
+import { useSearchParams } from "next/navigation";
+import { formateAndVerifyPhoneNumber, isValidEmail, verifyPhoneNumberLength } from "../Helper/Helper";
+import { countryObject } from "../interface/interface";
+type FormDataType = {
+  name: string;
+  email: string;
+  phone_number: string;
+  your_message: string;
+  service?: string; // ✅ optional
+  country_info?: countryObject;
+};
+
+const BASE_URL = process.env.NEXT_PUBLIC_ORBIT_CONTACT_FORM_BASE_URL;
+const ORBIT_API_KEY = process.env.NEXT_PUBLIC_ORBIT_API_KEY;
+const ORBIT_API_SECRETE = process.env.NEXT_PUBLIC_ORBIT_API_SECRETE;
+const ORBIT_SAY_HI_FORM_ID = process.env.NEXT_PUBLIC_ORBIT_SAY_HI_FORM_ID;
+const ORBIT_GET_QUOTE_FORM_ID = process.env.NEXT_PUBLIC_ORBIT_GET_QUOTE_FORM_ID;
 
 function ThinkArqContactForm() {
+  const searchParams = useSearchParams();
   const [formType, setFormType] = React.useState<"contact" | "quote">("contact");
+  const [showError, setShowError] = useState<boolean>(false);
+  const [mobileVerified, setMobileVerified] = useState<boolean>(true);
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
-    phone: "",
+    phone_number: "",
     service: "",
-    message: "",
+    your_message: "",
   });
-
+  const [dropDownSelectedValue, setDropDownSelectedValue] = useState<string | number>("");
+  const [countryOptionsDataArray, setCountryOptionsDataArray] = useState<Array<countryObject>>([]);
+  const CountryDataRef = useRef(false);
   // handle all input changes dynamically
   const handleInputChange = (key: string, value: string) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
@@ -32,11 +56,120 @@ function ThinkArqContactForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form Data:", formData);
-    // You can send `formData` to your API here
+  const handleSubmit = async (e: React.FormEvent) => {
+    const is_verified = verifyPhoneNumberLength(
+      formData.phone_number?.trim(),
+      dropDownSelectedValue ? JSON.parse(dropDownSelectedValue as string)?.country_code : "IN"
+    );
+    if (!is_verified) {
+      setMobileVerified(false);
+    } else {
+      setMobileVerified(true);
+    }
+    if (
+      !isValidEmail(formData?.email) ||
+      formData?.name == "" ||
+      formData?.phone_number == "" ||
+      formData?.your_message == ""
+    ) {
+      setShowError(true);
+    } else {
+      e.preventDefault();
+
+      const requestData: FormDataType = {
+        name: formData.name,
+        email: formData.email,
+        phone_number: formData.phone_number,
+        your_message: formData.your_message,
+        // country_info: dropDownSelectedValue,
+      };
+
+      if (dropDownSelectedValue !== "") {
+        requestData.country_info = JSON.parse(dropDownSelectedValue as string);
+      }
+
+      if (formType == "quote") requestData.service = formData.service;
+
+      try {
+        const response = await fetch(
+          `${BASE_URL}?api_key=${ORBIT_API_KEY}&api_secret=${ORBIT_API_SECRETE}&form_id=${
+            formType == "quote" ? ORBIT_GET_QUOTE_FORM_ID : ORBIT_SAY_HI_FORM_ID
+          }`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(requestData),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Success:", data);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
+    }
   };
+
+  const fetchAndFilterUserCountry = async () => {
+    try {
+      // Step 1: Get user country info from ipapi
+      const response = await fetch("https://ipapi.co/json/");
+      if (!response.ok) throw new Error("Failed to fetch IP info");
+
+      const data = await response.json();
+      const countryCode = data?.country_code?.toUpperCase() || "IN";
+
+      // Step 2: Filter from local data.json
+      const matchedCountry =
+        countryData.find((country) => country.country_code.toUpperCase() === countryCode) ||
+        countryData.find((c) => c.country_code.toUpperCase() === "IN");
+
+      // Step 3: Return both all countries and filtered one
+      return {
+        success: true,
+        countryOptionsData: countryData,
+        filteredCountry: matchedCountry,
+      };
+    } catch (error) {
+      console.error("Error fetching country:", error);
+      const fallback = countryData.find((c) => c.country_code.toUpperCase() === "IN");
+      return {
+        success: true,
+        countryOptionsData: countryData,
+        filteredCountry: fallback,
+      };
+    }
+  };
+
+  useEffect(() => {
+    const loadCountryData = async () => {
+      if (CountryDataRef.current) return;
+      CountryDataRef.current = true;
+
+      if (countryOptionsDataArray.length === 0) {
+        const response = await fetchAndFilterUserCountry();
+        if (response?.success) {
+          setCountryOptionsDataArray(response.countryOptionsData);
+          setDropDownSelectedValue(JSON.stringify(response.filteredCountry));
+        }
+      }
+    };
+    loadCountryData();
+  }, [countryOptionsDataArray]);
+  useEffect(() => {
+    const serviceId = searchParams.get("service-id");
+    if (serviceId) {
+      setFormType("quote");
+      const data = ServicesArray.find((item) => item.id === serviceId);
+      if (data) setFormData((previousData) => ({ ...previousData, service: data.text }));
+    }
+  }, [searchParams]);
 
   return (
     <div className="w-full h-full">
@@ -80,28 +213,62 @@ function ThinkArqContactForm() {
                 <Input
                   label="Name"
                   placeHolder="Name"
+                  className="border border-black/30 text-black rounded-lg"
                   type="text"
                   isRequiredField={true}
                   value={formData.name}
                   onChange={(e) => handleInputChange("name", e.target.value)}
+                  showError={showError}
+                  errorMessage={showError && formData?.name !== "" ? "this is an required field" : ""}
                 />
 
                 <Input
                   label="Email"
                   placeHolder="Email"
+                  className="border border-black/30 text-black rounded-lg"
                   type="email"
                   isRequiredField={true}
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
+                  showError={showError}
+                  errorMessage={
+                    showError
+                      ? formData?.email.trim() === ""
+                        ? "This field is required."
+                        : !isValidEmail(formData?.email)
+                        ? "Please enter a valid email address."
+                        : ""
+                      : ""
+                  }
                 />
 
                 <Input
+                  type="number"
+                  className="border border-black/30 text-black rounded-lg rounded-l-none"
                   label="Phone Number"
                   placeHolder="Phone Number"
-                  type="number"
                   isRequiredField={true}
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange("phone", e.target.value)}
+                  value={formateAndVerifyPhoneNumber(
+                    formData?.phone_number,
+                    dropDownSelectedValue ? JSON.parse(dropDownSelectedValue as string)?.country_code : "IN"
+                  )}
+                  onChange={(e) => handleInputChange("phone_number", e.target.value)}
+                  showError={(showError && formData.phone_number?.trim() == "") || !mobileVerified}
+                  countryDropDownPosition="bottom"
+                  dropDownSelectedValue={
+                    dropDownSelectedValue ? JSON.parse(dropDownSelectedValue as string)?.country_number_code : "+91"
+                  }
+                  setDropDownSelectedValue={setDropDownSelectedValue}
+                  errorMessage={
+                    showError && mobileVerified
+                      ? formData?.phone_number?.trim() === ""
+                        ? "This field is required."
+                        : ""
+                      : !mobileVerified
+                      ? "Please Enter valid Phone No"
+                      : ""
+                  }
+                  countryOptionsData={countryOptionsDataArray}
                 />
 
                 {formType === "quote" && (
@@ -123,8 +290,8 @@ function ThinkArqContactForm() {
                   label="Your Message"
                   placeHolder="Your Message"
                   isRequiredField={true}
-                  value={formData.message}
-                  onChange={(e) => handleInputChange("message", e.target.value)}
+                  value={formData.your_message}
+                  onChange={(e) => handleInputChange("your_message", e.target.value)}
                 />
 
                 <button

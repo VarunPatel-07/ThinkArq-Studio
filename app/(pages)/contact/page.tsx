@@ -1,6 +1,7 @@
 import Footer from "@/app/Components/Footer";
 import Navbar from "@/app/Components/Navbar/Navbar";
 import ThinkArqContactForm from "@/app/Components/ThinkArqContactForm";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
 
       <div className="pt-[110px]">
         <div className="think-arq-container">
-          <ThinkArqContactForm />
+          <Suspense>
+            <ThinkArqContactForm />
+          </Suspense>
         </div>
       </div>
       <div className="w-full">

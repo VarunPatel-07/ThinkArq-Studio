@@ -48,7 +48,7 @@ export default function Page({ params }: { params: { "service-slug": string } })
       </div>
       <div className="pt-10 lg:pt-12 xl:pt-24">
         <div className="think-arq-container h-full">
-          <LetsConnect data={data?.lets_connect} />
+          <LetsConnect data={data?.lets_connect} service_id={data?.id} />
         </div>
       </div>
       <Footer />

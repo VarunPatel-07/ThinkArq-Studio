@@ -149,11 +149,12 @@ export default function SearchDrop(props: SearchDropProps) {
 
       <div className="w-full relative">
         <button
+          type="button"
           onClick={handleToggle}
           onKeyDown={handelKeyPress}
           ref={buttonRef}
           className={clsx(
-            "border border-gray-500 rounded-xl px-7 py-3 bg-white w-full placeholder:text-[#898989] text-black focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-[#191A23] font-space-grotesk text-lg flex items-center justify-between",
+            "border border-black/30 rounded-xl px-7 py-3 bg-white w-full placeholder:text-[#898989] text-black focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-[#191A23] font-space-grotesk text-lg flex items-center justify-between",
             className
           )}
           style={{ border: showError && errorMessage ? "1px solid red" : "" }}
@@ -228,7 +229,7 @@ export default function SearchDrop(props: SearchDropProps) {
                   filteredOptions.length > 0 ? (
                     <VirtualList
                       ref={virtualListRef}
-                      height={filteredOptions?.length >= 5 ? 300 : filteredOptions?.length * 50}
+                      height={filteredOptions?.length >= 10 ? 300 : filteredOptions?.length * 50}
                       itemCount={filteredOptions?.length}
                       itemSize={50}
                       width={"100%"}

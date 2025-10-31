@@ -3,7 +3,8 @@ import Navbar from "@/app/Components/Navbar/Navbar";
 import ThinkArqContactForm from "@/app/Components/ThinkArqContactForm";
 import { OwnerInformation, PrivacyPolicyData } from "@/app/Constant/PrivacyPolicy";
 import { Metadata } from "next";
-import React from "react";
+import Link from "next/link";
+import React, { Suspense } from "react";
 export const metadata: Metadata = {
   title: "Privacy Policy | Think Arq Studio",
   description:
@@ -69,7 +70,7 @@ function page() {
                         {data?.label}:
                       </p>
 
-                      <a
+                      <Link
                         href={
                           data?.label === "Email"
                             ? `mailto:${data?.value}`
@@ -83,7 +84,7 @@ function page() {
                         rel="noopener noreferrer"
                         className="font-space-grotesk font-normal text-base xl:text-lg pt-1 text-gray-800 hover:text-green-600 transition-colors">
                         {data?.value}
-                      </a>
+                      </Link>
                     </>
                   )}
                 </div>
@@ -94,7 +95,9 @@ function page() {
       </div>
       <div className="pt-10 lg:pt-12 xl:pt-24">
         <div className="think-arq-container h-full">
-          <ThinkArqContactForm />
+          <Suspense>
+            <ThinkArqContactForm />
+          </Suspense>
         </div>
       </div>
       <div className="w-full">

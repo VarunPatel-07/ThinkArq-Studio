@@ -112,3 +112,10 @@ export interface OwnerInfoDataInterface {
   label: string;
   value: string;
 }
+
+export interface countryObject {
+  country_flag: string;
+  country_name: string;
+  country_code: string;
+  country_number_code: string;
+}
