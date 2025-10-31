@@ -9,8 +9,7 @@ import Testimonials from "./Components/Testimonials";
 import Footer from "./Components/Footer";
 import { ServicesArray } from "./Constant/ServicesArray";
 import { Metadata } from "next";
-import Image from "next/image";
-import ThinkArqLogo from "@/app/Assets/Images/think-arq-logo.webp";
+
 import { Suspense } from "react";
 export const metadata: Metadata = {
   title: "Think Arq - Think Build Disrupt",

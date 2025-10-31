@@ -2,12 +2,8 @@
 import React from "react";
 import CommanSectionHeader from "./Common/CommanSectionHeader";
 import { OurCoreValueArray } from "../Constant/AboutUsConstant";
-import dynamic from "next/dynamic";
 
 // Dynamically import with SSR disabled
-const DotLottieReact = dynamic(() => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact), {
-  ssr: false,
-});
 
 function OurCoreValue() {
   return (

@@ -60,9 +60,9 @@ function Footer() {
                       )}>
                       <span className="inline-flex text-lg font-medium text-white">{item?.label}:</span>
                       {item?.link ? (
-                        <a href={item?.link} target={item?.target} className="text-base text-white/70">
+                        <Link href={item?.link} target={item?.target} className="text-base text-white/70">
                           {item?.value}
-                        </a>
+                        </Link>
                       ) : (
                         <p className="text-base text-white/70 mt-1 lg:mt-0">{item?.value}</p>
                       )}

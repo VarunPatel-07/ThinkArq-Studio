@@ -109,7 +109,7 @@ function ThinkArqContactForm() {
         }
 
         const data = await response.json();
-        // console.log("Success:", data);
+        console.log("Success:", data);
       } catch (error) {
         console.error("Error submitting form:", error);
       }
@@ -161,7 +161,7 @@ function ThinkArqContactForm() {
       }
     };
     loadCountryData();
-  }, []);
+  }, [countryOptionsDataArray]);
   useEffect(() => {
     const serviceId = searchParams.get("service-id");
     if (serviceId) {
