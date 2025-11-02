@@ -11,7 +11,7 @@ function TeamCommonCard({ data }: { data: TeamInfoInterface }) {
     <div className="w-full h-full overflow-hidden rounded-[15px] md:rounded-[30px] lg:rounded-[45px] border border-b-8 border-[#191A23] p-6 lg:py-10 lg:px-9 cursor-pointer transition-all duration-500 hover:shadow-2xl">
       <div className="w-full flex flex-col items-start justify-start">
         <div className="w-full flex items-stretch justify-start gap-5 pb-7 border-b-2 border-b-[#191A23]">
-          <Image src={imagePath} alt="Demo Image" width={120} height={120} />
+          <Image src={imagePath} alt={name} width={120} height={120} />
           <div className="flex flex-col items-start justify-between grow">
             <div className="w-full flex items-end justify-end">
               <Link
