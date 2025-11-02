@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ThinkArqLogo from "@/app/Assets/Images/think-arq-logo.png";
+import ThinkArqLogo from "@/app/Assets/Images/think-arq-logo.webp";
 import Image from "next/image";
 import { NavbarLinks } from "@/app/Constant/NavbarConstant";
 import Link from "next/link";
@@ -17,7 +17,7 @@ function Navbar() {
     <nav className="w-full border-b border-b-black/10 fixed top-0 left-0 bg-white z-50">
       <div className="think-arq-container">
         <div className="w-full flex items-center justify-between py-4">
-          <Link href={'/'} className="w-fit h-fit -ml-1">
+          <Link href={"/"} className="w-fit h-fit -ml-1">
             <Image src={ThinkArqLogo} alt="ThinkArq Logo" width={140} height={50} />
           </Link>
           <div

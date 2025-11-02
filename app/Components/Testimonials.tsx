@@ -23,14 +23,16 @@ function Testimonials() {
         <div className="flex items-center justify-end gap-5">
           <button
             ref={prevRef}
+            aria-label="Arrow Left"
             className="min-w-12 min-h-12 rounded-full border border-[#191A23] hover:bg-[#191A23] hover:text-white cursor-pointer  text-[#191A23] flex items-center justify-center transition-colors duration-300 disabled:opacity-50 disabled:hover:bg-white disabled:hover:text-[#191A23]  disabled:cursor-not-allowed">
-            <HiOutlineArrowLeft className="min-w-7 min-h-7" />
+            <HiOutlineArrowLeft className="min-w-7 min-h-7" aria-hidden="true" />
           </button>
 
           <button
             ref={nextRef}
+            aria-label="Arrow Right"
             className="min-w-12 min-h-12 rounded-full border border-[#191A23] hover:bg-[#191A23] hover:text-white cursor-pointer  text-[#191A23] flex items-center justify-center transition-colors duration-300 disabled:opacity-50 disabled:hover:bg-white disabled:hover:text-[#191A23] disabled:cursor-not-allowed">
-            <HiOutlineArrowRight className="min-w-7 min-h-7" />
+            <HiOutlineArrowRight className="min-w-7 min-h-7" aria-hidden="true" />
           </button>
         </div>
       </div>

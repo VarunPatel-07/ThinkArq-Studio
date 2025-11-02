@@ -48,12 +48,19 @@ export const ServicesArray: ServicesArrayInterface[] = [
     other_service_title: "Other Services",
     other_service_description:
       "At Think Arq, we create innovative digital experiences and offer a full range of services to help businesses grow online. These services include:",
+    whyChooseUs: null,
     lets_connect: {
       title: "",
       description: "",
       sub_title: "",
       cta_button: "",
       lottieIcon: "",
+    },
+    meta_data: {
+      title: "",
+      description: "",
+      keywords: "",
+      og_image: "/meta-images/seo-service.png",
     },
   },
   {
@@ -66,6 +73,7 @@ export const ServicesArray: ServicesArrayInterface[] = [
     lottieIcon: "/Lottie/pay-per-click-advertising.lottie",
     services_title: `Boost Your Online Growth with Expert PPC Advertising Services in USA & Europe`,
     services_description: `Accelerate your business growth with Think Arq, the best PPC agency in USA and Europe. Our Pay Per Click advertising services help businesses achieve immediate visibility, qualified traffic, and measurable ROI. We specialize in creating high-performing Google Ads, Facebook Ads, LinkedIn Ads, and YouTube Advertising campaigns designed to reach your ideal audience and convert clicks into customers.`,
+
     how_we_work: [
       {
         title: `Google Ads Management`,
@@ -107,6 +115,34 @@ export const ServicesArray: ServicesArrayInterface[] = [
     other_service_title: "Other Digital Marketing Services",
     other_service_description:
       "At Think Arq, we provide complete digital marketing solutions to help brands grow globally. Our services include:",
+    whyChooseUs: {
+      title: "Why Choose Think Arq as Your PPC Agency in USA & Europe",
+      layout: "points",
+      description:
+        "As a trusted PPC management company in USA and Europe, we use cutting-edge tools and proven ad strategies to help you generate quality leads and maximize your ad spend. Whether you want to increase sales, drive sign-ups, or boost awareness, we make every click count.",
+      points: [
+        {
+          title: "",
+          description: "Certified Google Ads, Meta Ads, and LinkedIn Ads specialists",
+        },
+        {
+          title: "",
+          description: "Deep expertise in Pay Per Click management services for USA & Europe",
+        },
+        {
+          title: "",
+          description: "Transparent reporting and real-time analytics dashboards",
+        },
+        {
+          title: "",
+          description: "Proven success in diverse industries and business sizes",
+        },
+        {
+          title: "",
+          description: "Continuous A/B testing, optimization, and campaign scaling",
+        },
+      ],
+    },
     lets_connect: {
       title: "Partner with the Best PPC Advertising Agency in USA & Europe",
       description:
@@ -115,6 +151,12 @@ export const ServicesArray: ServicesArrayInterface[] = [
         "Contact Think Arq today to work with the best PPC agency in USA & Europe and turn every click into profit.",
       cta_button: "Let’s grow your business — faster, smarter, and globally.",
       lottieIcon: "",
+    },
+    meta_data: {
+      title: "",
+      description: "",
+      keywords: "",
+      og_image: "/meta-images/ppc-services.png",
     },
   },
   {
@@ -159,6 +201,35 @@ export const ServicesArray: ServicesArrayInterface[] = [
     other_service_title: "Other Services",
     other_service_description:
       "At Think Arq, we create innovative digital experiences and offer a full range of services to help businesses grow online. These services include:",
+    whyChooseUs: {
+      title: "The Think Arq Difference",
+      layout: "points",
+      description:
+        "At Think Arq, we don't just send emails — we build relationships. Our campaigns are crafted with precision, backed by analytics, and designed to grow your brand sustainably.",
+      points: [
+        {
+          title: "Tailored Strategies",
+          description: "Every brand is different. We create campaigns that align with your audience, goals, and tone.",
+        },
+        {
+          title: "Data-Driven Decisions",
+          description: "Every design, subject line, and send time is guided by real performance data.",
+        },
+        {
+          title: "Human-Centered Creativity",
+          description: "While automation powers our workflow, creativity fuels the connection.",
+        },
+        {
+          title: "Global Perspective",
+          description:
+            "With a strong presence across the USA, Europe, and India, we bring global insights with local relevance.",
+        },
+        {
+          title: "End-to-End Management",
+          description: "From strategy to reporting, Think Arq manages every aspect so you can focus on growth.",
+        },
+      ],
+    },
     lets_connect: {
       title: "Partner with Think Arq — Your Trusted Social Media Growth Partner",
       description:
@@ -167,6 +238,12 @@ export const ServicesArray: ServicesArrayInterface[] = [
         "Get in touch today to elevate your digital presence, strengthen your online community, and transform your social media into a results-driven asset.",
       cta_button: "Ready to turn your social media presence into a powerful growth engine?",
       lottieIcon: "",
+    },
+    meta_data: {
+      title: "",
+      description: "",
+      keywords: "",
+      og_image: "/meta-images/social-media-service.png",
     },
   },
   {
@@ -215,6 +292,35 @@ export const ServicesArray: ServicesArrayInterface[] = [
     other_service_title: "Other Services",
     other_service_description:
       "At Think Arq, we create innovative digital experiences and offer a full range of services to help businesses grow online. These services include:",
+    whyChooseUs: {
+      title: "The Think Arq Difference",
+      layout: "points",
+      description:
+        "At Think Arq, we don't just send emails — we build relationships. Our campaigns are crafted with precision, backed by analytics, and designed to grow your brand sustainably.",
+      points: [
+        {
+          title: "Tailored Strategies",
+          description: "Every brand is different. We create campaigns that align with your audience, goals, and tone.",
+        },
+        {
+          title: "Data-Driven Decisions",
+          description: "Every design, subject line, and send time is guided by real performance data.",
+        },
+        {
+          title: "Human-Centered Creativity",
+          description: "While automation powers our workflow, creativity fuels the connection.",
+        },
+        {
+          title: "Global Perspective",
+          description:
+            "With a strong presence across the USA, Europe, and India, we bring global insights with local relevance.",
+        },
+        {
+          title: "End-to-End Management",
+          description: "From strategy to reporting, Think Arq manages every aspect so you can focus on growth.",
+        },
+      ],
+    },
     lets_connect: {
       title: "Let’s Elevate Your Email Marketing",
       description:
@@ -222,6 +328,12 @@ export const ServicesArray: ServicesArrayInterface[] = [
       sub_title: "Partner with Think Arq today and discover what strategic email marketing can do for your brand.",
       cta_button: "Let’s create emails that don’t just get opened they get remembered.",
       lottieIcon: "",
+    },
+    meta_data: {
+      title: "",
+      description: "",
+      keywords: "",
+      og_image: "/meta-images/email-marketing-services.png",
     },
   },
   {
@@ -237,29 +349,28 @@ export const ServicesArray: ServicesArrayInterface[] = [
       "Create seamless, intuitive, and visually striking digital experiences with Think Arq’s UI/UX Design Services, where creativity meets strategy, and every design decision drives engagement. As a leading UI/UX design agency in USA and Europe, we craft user-centered interfaces that not only look exceptional but also perform effortlessly.",
       "Hire UI/UX designers from India who specialize in building scalable, research-backed designs for startups, enterprises, and global brands. From user research to interaction design, every element we create enhances usability, clarity, and emotional connection ensuring your digital products resonate with users and deliver measurable results.",
     ],
-how_we_work: [
-  {
-    title: `User Research & Strategy`,
-    description: `We begin with in-depth research — understanding user behavior, pain points, and expectations. Our UX strategy sets a clear roadmap to guide design decisions aligned with user and business needs.`,
-  },
-  {
-    title: `Wireframing & Prototyping`,
-    description: `From concept sketches to interactive prototypes, we translate ideas into tangible experiences. Rapid prototyping helps validate functionality and flow before final design execution.`,
-  },
-  {
-    title: `UI Design & Visual Systems`,
-    description: `We design visually stunning, brand-consistent interfaces using modern design systems. Every button, color, and layout is meticulously crafted for clarity, balance, and engagement.`,
-  },
-  {
-    title: `Usability Testing & Optimization`,
-    description: `Through user testing and behavioral analytics, we refine designs to ensure flawless usability across devices, platforms, and screen sizes — creating truly responsive experiences.`,
-  },
-  {
-    title: `Product Design & Redesign`,
-    description: `Whether you’re building from scratch or reimagining an existing product, we create scalable design solutions that evolve with your business and technology.`,
-  },
-],
-
+    how_we_work: [
+      {
+        title: `User Research & Strategy`,
+        description: `We begin with in-depth research — understanding user behavior, pain points, and expectations. Our UX strategy sets a clear roadmap to guide design decisions aligned with user and business needs.`,
+      },
+      {
+        title: `Wireframing & Prototyping`,
+        description: `From concept sketches to interactive prototypes, we translate ideas into tangible experiences. Rapid prototyping helps validate functionality and flow before final design execution.`,
+      },
+      {
+        title: `UI Design & Visual Systems`,
+        description: `We design visually stunning, brand-consistent interfaces using modern design systems. Every button, color, and layout is meticulously crafted for clarity, balance, and engagement.`,
+      },
+      {
+        title: `Usability Testing & Optimization`,
+        description: `Through user testing and behavioral analytics, we refine designs to ensure flawless usability across devices, platforms, and screen sizes — creating truly responsive experiences.`,
+      },
+      {
+        title: `Product Design & Redesign`,
+        description: `Whether you’re building from scratch or reimagining an existing product, we create scalable design solutions that evolve with your business and technology.`,
+      },
+    ],
 
     how_we_work_title: "Our UI/UX Design Services Include",
     how_we_work_description: "",
@@ -267,6 +378,16 @@ how_we_work: [
     other_service_title: "Other Services",
     other_service_description:
       "At Think Arq, we create innovative digital experiences and offer a full range of services to help businesses grow online. These services include:",
+    whyChooseUs: {
+      title: "Why Choose Think Arq for UI/UX Design?",
+      subtitle: "Because great design is not luck — it's strategy.",
+      layout: "paragraph",
+      description: [
+        "At Think Arq, our approach is rooted in research, empathy, and precision. We don't just design what looks good; we design what works. Our design process balances innovation with functionality, ensuring every interface enhances user delight and business performance.",
+        "We bring together global design thinking with deep technical expertise — a blend that allows us to deliver world-class digital experiences for clients across the USA and Europe.",
+      ],
+      closingStatement: "Our goal is simple: to make every interaction meaningful and every experience unforgettable.",
+    },
     lets_connect: {
       title: "Let’s Design What’s Next",
       description:
@@ -274,6 +395,12 @@ how_we_work: [
       sub_title: "Your brand deserves a design that’s not just beautiful — but meaningful. Let’s build it together.",
       cta_button: "Let’s Design What’s Next",
       lottieIcon: "",
+    },
+    meta_data: {
+      title: "",
+      description: "",
+      keywords: "",
+      og_image: "/meta-images/ui-ux-services.png",
     },
   },
 ];

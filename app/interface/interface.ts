@@ -34,12 +34,19 @@ export interface ServicesArrayInterface {
   shadow_title: string;
   other_service_title: string;
   other_service_description: string;
+  whyChooseUs: WhyChooseUsSectionInterface | null;
   lets_connect: {
     title: string;
     description: string;
     sub_title: string;
     cta_button: string;
     lottieIcon: string;
+  };
+  meta_data: {
+    title: string;
+    description: string;
+    keywords: string;
+    og_image: string;
   };
 }
 
@@ -111,4 +118,32 @@ export interface OwnerInfoDataInterface {
   id: number;
   label: string;
   value: string;
+}
+
+export interface countryObject {
+  country_flag: string;
+  country_name: string;
+  country_code: string;
+  country_number_code: string;
+}
+
+export interface PointItem {
+  title: string;
+  description: string;
+}
+
+export interface WhyChooseUsSectionInterface {
+  title: string;
+  subtitle?: string;
+  description?: string | string[];
+  points?: PointItem[];
+  closingStatement?: string;
+  layout: "paragraph" | "points";
+}
+export interface TeamInfoInterface {
+  imagePath: string;
+  name: string;
+  designation: string;
+  linkedinUrl: string;
+  description: string;
 }

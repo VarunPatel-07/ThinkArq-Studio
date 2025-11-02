@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ThinkArqWhiteLogo from "@/app/Assets/Images/thinkarq-white-logo.png";
+import ThinkArqWhiteLogo from "@/app/Assets/Images/thinkarq-white-logo.webp";
 import Image from "next/image";
 import { NavbarLinks } from "../Constant/NavbarConstant";
 import Link from "next/link";
@@ -38,6 +38,7 @@ function Footer() {
                   <Link
                     key={link.label}
                     href={link.link}
+                    aria-label={link.label}
                     className="text-[var(--theme-black-color)] bg-white font-space-grotesk text-lg font-medium flex items-center justify-center p-1.5 rounded-full">
                     {link.icon}
                   </Link>
@@ -46,9 +47,9 @@ function Footer() {
             </div>
             <div className="flex flex-col lg:flex-row items-stretch justify-start pt-14 gap-10 lg:gap-5 xl:gap-20">
               <div className="w-fit lg:max-w-[330px]">
-                <h6 className="bg-[#B9FF66] font-space-grotesk text-base font-semibold px-1 pb-0.5 rounded-md capitalize inline-flex">
+                <span className="bg-[#B9FF66] font-space-grotesk text-base font-semibold px-1 pb-0.5 rounded-md capitalize inline-flex">
                   contact us:
-                </h6>
+                </span>
                 <div className="flex flex-col items-start justify-start gap-2 pt-7">
                   {ContactUsSectionInfo?.map((item) => (
                     <div
@@ -59,9 +60,9 @@ function Footer() {
                       )}>
                       <span className="inline-flex text-lg font-medium text-white">{item?.label}:</span>
                       {item?.link ? (
-                        <a href={item?.link} target={item?.target} className="text-base text-white/70">
+                        <Link href={item?.link} target={item?.target} className="text-base text-white/70">
                           {item?.value}
-                        </a>
+                        </Link>
                       ) : (
                         <p className="text-base text-white/70 mt-1 lg:mt-0">{item?.value}</p>
                       )}
@@ -72,7 +73,7 @@ function Footer() {
               <div className="grow bg-[#292A32] rounded-2xl p-6 lg:p-6 xl:p-8 flex items-center flex-sm-row justify-center gap-3 md:gap-3 xl:gap-5">
                 <Input
                   type="email"
-                  className="bg-transparent text-white text-sm md:text-base"
+                  className="bg-white text-black rounded-lg text-sm md:text-base"
                   placeHolder="Enter Your Email"
                   value={email}
                   setValue={setEmail}
@@ -95,6 +96,7 @@ function Footer() {
                   <Link
                     key={link.label}
                     href={link.link}
+                    aria-label={link.label}
                     className="text-[var(--theme-black-color)] bg-white font-space-grotesk text-lg font-medium flex items-center justify-center p-1.5 rounded-full">
                     {link.icon}
                   </Link>
