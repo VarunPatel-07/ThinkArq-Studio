@@ -5,10 +5,25 @@ import { OwnerInformation, PrivacyPolicyData } from "@/app/Constant/PrivacyPolic
 import { Metadata } from "next";
 import Link from "next/link";
 import React, { Suspense } from "react";
+
 export const metadata: Metadata = {
-  title: "Privacy Policy | Think Arq Studio",
+  title: "Privacy Policy | Think Arq - Think Build Disrupt",
   description:
     "At Think Arq, we prioritize the privacy and security of our clients, partners, and website visitors. This Privacy Policy outlines how we collect, use, and protect your personal information in compliance with applicable data protection laws.",
+  openGraph: {
+    title: "Privacy Policy | Think Arq - Think Build Disrupt",
+    description:
+      "At Think Arq, we prioritize the privacy and security of our clients, partners, and website visitors. This Privacy Policy outlines how we collect, use, and protect your personal information in compliance with applicable data protection laws.",
+    url: `https://thinkarq.com/`,
+    images: "/meta-images/think-arq.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Think Arq - Think Build Disrupt",
+    description:
+      "At Think Arq, we prioritize the privacy and security of our clients, partners, and website visitors. This Privacy Policy outlines how we collect, use, and protect your personal information in compliance with applicable data protection laws.",
+    images: "/meta-images/think-arq.png",
+  },
 };
 function page() {
   return (

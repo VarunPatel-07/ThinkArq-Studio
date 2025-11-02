@@ -11,9 +11,9 @@ export const ContactUsSectionInfo: ContactUsInfoInterface[] = [
   {
     id: "email",
     label: "Email",
-    value: "contact@example.com",
+    value: "contact.thinkarq@gmail.com",
     className: "",
-    link: "mailto:contact@example.com",
+    link: "mailto:contact.thinkarq@gmail.com",
   },
   {
     id: "address",
