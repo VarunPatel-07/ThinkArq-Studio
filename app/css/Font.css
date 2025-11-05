@@ -1,8 +1,8 @@
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-ExtraLight.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-ExtraLight.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-ExtraLight.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-ExtraLight.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-ExtraLight.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -10,9 +10,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-ExtraBoldItalic.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-ExtraBoldItalic.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-ExtraBoldItalic.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-ExtraBoldItalic.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-ExtraBoldItalic.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-ExtraBoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -20,9 +20,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-ExtraBold.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-ExtraBold.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-ExtraBold.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-ExtraBold.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-ExtraBold.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-ExtraBold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -30,9 +30,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-ExtraLightItalic.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-ExtraLightItalic.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-ExtraLightItalic.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-ExtraLightItalic.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-ExtraLightItalic.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-ExtraLightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -40,9 +40,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-Bold.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-Bold.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-Bold.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-Bold.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-Bold.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -50,9 +50,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-Black.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-Black.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-Black.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-Black.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-Black.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -60,9 +60,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-BlackItalic.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-BlackItalic.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-BlackItalic.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-BlackItalic.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-BlackItalic.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-BlackItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -70,9 +70,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-Italic.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-Italic.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-Italic.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-Italic.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-Italic.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -80,9 +80,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-BoldItalic.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-BoldItalic.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-BoldItalic.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-BoldItalic.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-BoldItalic.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -90,9 +90,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-Thin.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-Thin.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-Thin.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-Thin.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-Thin.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -100,9 +100,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-Medium.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-Medium.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-Medium.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-Medium.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-Medium.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -110,9 +110,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-MediumItalic.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-MediumItalic.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-MediumItalic.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-MediumItalic.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-MediumItalic.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -120,9 +120,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-LightItalic.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-LightItalic.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-LightItalic.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-LightItalic.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-LightItalic.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-LightItalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -130,9 +130,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-Regular.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-Regular.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-Regular.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-Regular.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-Regular.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -140,9 +140,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-ThinItalic.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-ThinItalic.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-ThinItalic.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-ThinItalic.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-ThinItalic.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-ThinItalic.ttf") format("truetype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -150,9 +150,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-SemiBoldItalic.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-SemiBoldItalic.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-SemiBoldItalic.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-SemiBoldItalic.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-SemiBoldItalic.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-SemiBoldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -160,9 +160,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-SemiBold.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-SemiBold.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-SemiBold.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-SemiBold.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-SemiBold.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -170,9 +170,9 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("../Assets/Fonts/DMSans/DMSans-Light.woff2") format("woff2"),
-    url("../Assets/Fonts/DMSans/DMSans-Light.woff") format("woff"),
-    url("../Assets/Fonts/DMSans/DMSans-Light.ttf") format("truetype");
+  src: url("../Assets/fonts/DMSans/DMSans-Light.woff2") format("woff2"),
+    url("../Assets/fonts/DMSans/DMSans-Light.woff") format("woff"),
+    url("../Assets/fonts/DMSans/DMSans-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -181,9 +181,9 @@
 @font-face {
   font-family: "Space Grotesk";
   src: local("Space Grotesk Medium"), local("SpaceGrotesk-Medium"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Medium.woff2") format("woff2"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Medium.woff") format("woff"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Medium.ttf") format("truetype");
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Medium.woff2") format("woff2"),
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Medium.woff") format("woff"),
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -192,9 +192,9 @@
 @font-face {
   font-family: "Space Grotesk";
   src: local("Space Grotesk Bold"), local("SpaceGrotesk-Bold"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Bold.woff2") format("woff2"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Bold.woff") format("woff"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf") format("truetype");
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Bold.woff2") format("woff2"),
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Bold.woff") format("woff"),
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -203,9 +203,9 @@
 @font-face {
   font-family: "Space Grotesk";
   src: local("Space Grotesk Light"), local("SpaceGrotesk-Light"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Light.woff2") format("woff2"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Light.woff") format("woff"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf") format("truetype");
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.woff2") format("woff2"),
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.woff") format("woff"),
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -214,9 +214,9 @@
 @font-face {
   font-family: "Space Grotesk";
   src: local("Space Grotesk SemiBold"), local("SpaceGrotesk-SemiBold"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.woff2") format("woff2"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.woff") format("woff"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.ttf") format("truetype");
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.woff2") format("woff2"),
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.woff") format("woff"),
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -225,9 +225,9 @@
 @font-face {
   font-family: "Space Grotesk";
   src: local("Space Grotesk Regular"), local("SpaceGrotesk-Regular"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Regular.woff2") format("woff2"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Regular.woff") format("woff"),
-    url("../Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf") format("truetype");
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Regular.woff2") format("woff2"),
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Regular.woff") format("woff"),
+    url("../Assets/fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -235,8 +235,10 @@
 
 .font-dm-sans {
   font-family: "DM Sans", sans-serif;
+  font-display: swap;
 }
 
 .font-space-grotesk {
   font-family: "Space Grotesk", sans-serif;
+  font-display: swap;
 }

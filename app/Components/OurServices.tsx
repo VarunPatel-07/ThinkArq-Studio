@@ -60,7 +60,11 @@ function OurServices({
                     <Link
                       href={services?.href}
                       target={services?.target}
-                      className="gap-2 bg-[#191A23]  rounded-full w-12 h-12 flex items-center justify-end flex-nowrap transition-all duration-500 group-hover:w-48 overflow-hidden group/button">
+                      title={services?.services_title}
+                      aria-label={`Learn more about ${services?.services_title}`}
+                      className="gap-2 bg-[#191A23] rounded-full w-12 h-12 flex items-center justify-end flex-nowrap transition-all duration-500 group-hover:w-48 overflow-hidden group/button">
+                      {/* Keep service title visible for SEO but hidden visually */}
+                      <span className="sr-only">{`Learn more about ${services?.services_title}`}</span>
                       <span className="-translate-x-full opacity-0 group-hover:-translate-x-1/2 group-hover:opacity-100 text-white font-medium text-lg transition-all duration-300 text-nowrap">
                         Learn More
                       </span>

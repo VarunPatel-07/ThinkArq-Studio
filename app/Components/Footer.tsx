@@ -17,18 +17,24 @@ function Footer() {
         <div className="w-full h-full rounded-t-[15px] md:rounded-t-[30px] lg:rounded-t-[45px] bg-[var(--theme-black-color)]  p-8 lg:p-10 xl:p-14">
           <div className="w-full h-full">
             <div className="w-full h-full flex items-center justify-between gap-5 flex-col md:flex-row">
-              <Link href={"/"} className="w-fit h-fit -ml-1">
+              <Link href={"/"} title="ThinkArq Logo" aria-label="ThinkArq Logo" className="w-fit h-fit -ml-1">
                 <Image
                   src={ThinkArqWhiteLogo}
                   className="w-[180px] h-[50px]"
                   alt="ThinkArq Logo"
                   width={140}
                   height={40}
+                  title="ThinkArq Logo"
                 />
               </Link>
               <div className="w-fit items-center justify-center gap-5 hidden md:flex">
                 {NavbarLinks?.map((link) => (
-                  <Link key={link.id} href={link.href} className="text-white font-space-grotesk text-lg font-medium">
+                  <Link
+                    key={link.id}
+                    href={link.href}
+                    title={link.label}
+                    aria-label={link.label}
+                    className="text-white font-space-grotesk text-lg font-medium">
                     {link.label}
                   </Link>
                 ))}
@@ -39,6 +45,7 @@ function Footer() {
                     key={link.label}
                     href={link.link}
                     aria-label={link.label}
+                    title={link.label}
                     className="text-[var(--theme-black-color)] bg-white font-space-grotesk text-lg font-medium flex items-center justify-center p-1.5 rounded-full">
                     {link.icon}
                   </Link>
@@ -60,7 +67,12 @@ function Footer() {
                       )}>
                       <span className="inline-flex text-lg font-medium text-white">{item?.label}:</span>
                       {item?.link ? (
-                        <Link href={item?.link} target={item?.target} className="text-base text-white/70">
+                        <Link
+                          href={item?.link}
+                          target={item?.target}
+                          aria-label={item.value}
+                          title={item.value}
+                          className="text-base text-white/70">
                           {item?.value}
                         </Link>
                       ) : (
@@ -86,7 +98,12 @@ function Footer() {
             <div className="flex flex-sm-row gap-5 items-center justify-between grow w-full py-10 md:hidden">
               <div className="w-fit flex items-center justify-center gap-5">
                 {NavbarLinks?.map((link) => (
-                  <Link key={link.id} href={link.href} className="text-white font-space-grotesk text-lg font-medium">
+                  <Link
+                    key={link.id}
+                    href={link.href}
+                    aria-label={link.label}
+                    title={link.label}
+                    className="text-white font-space-grotesk text-lg font-medium">
                     {link.label}
                   </Link>
                 ))}
@@ -97,6 +114,7 @@ function Footer() {
                     key={link.label}
                     href={link.link}
                     aria-label={link.label}
+                    title={link.label}
                     className="text-[var(--theme-black-color)] bg-white font-space-grotesk text-lg font-medium flex items-center justify-center p-1.5 rounded-full">
                     {link.icon}
                   </Link>
@@ -108,7 +126,11 @@ function Footer() {
                 <p className="font-space-grotesk text-base text-white/70">
                   © {new Date().getFullYear()} ThinkArq Studios. All Rights Reserved.
                 </p>
-                <Link href="/privacy-policy" className="text-white/70 transition-all hover:text-white hover:underline">
+                <Link
+                  aria-label=" Privacy Policy"
+                  title="Privacy Policy"
+                  href="/privacy-policy"
+                  className="text-white/70 transition-all hover:text-white hover:underline">
                   Privacy Policy
                 </Link>
               </div>

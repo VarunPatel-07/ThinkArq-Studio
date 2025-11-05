@@ -35,7 +35,7 @@ function HowWeWork({
                 </span>
               </div>
               <div className="flex flex-col items-start justify-start gap-2">
-                <h6 className="font-space-grotesk text-lg md:text-xl lg:text-2xl font-bold">{item?.title}</h6>
+                <h3 className="font-space-grotesk text-lg md:text-xl lg:text-2xl font-bold">{item?.title}</h3>
                 <p className="font-space-grotesk text-sm lg:text-lg text-gray-500">{item?.description}</p>
               </div>
             </div>
