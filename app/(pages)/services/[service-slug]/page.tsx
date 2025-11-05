@@ -26,20 +26,18 @@ export async function generateMetadata({ params }: { params: { "service-slug": s
   }
 
   return {
-    title: `${data.services_title} | Think Arq`,
-    description: Array.isArray(data.services_description)
-      ? data.services_description[0]
-      : data.services_description || "Discover our unique services at Think Arq Studio.",
+    title: data?.meta_data?.title,
+    description: data?.meta_data?.description,
     openGraph: {
-      title: "Service Not Found | Think Arq",
-      description: "The service you are looking for does not exist.",
+      title: data?.meta_data?.title,
+      description: data?.meta_data?.description,
       url: `https://thinkarq.com/services/${slug}`,
       images: data?.meta_data?.og_image,
     },
     twitter: {
       card: "summary_large_image",
-      title: "Service Not Found | Think Arq",
-      description: "The service you are looking for does not exist.",
+      title: data?.meta_data?.title,
+      description: data?.meta_data?.description,
       images: data?.meta_data?.og_image,
     },
   };

@@ -18,7 +18,7 @@ function Testimonials() {
       <div className="flex items-start md:items-center gap-4 justify-between think-arq-container flex-col md:flex-row">
         <CommanSectionHeader
           title="Testimonials"
-          description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+          description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online."
         />
         <div className="flex items-center justify-end gap-5">
           <button
@@ -36,6 +36,7 @@ function Testimonials() {
           </button>
         </div>
       </div>
+
       <div className="w-full h-full pt-6 md:pt-10 lg:pt-14 xl:pt-20">
         <Swiper
           slidesPerView={1}
@@ -44,37 +45,35 @@ function Testimonials() {
           pagination={{
             el: ".custom-pagination",
             clickable: true,
-            renderBullet: (index, className) => {
-              return `<span class="${className} w-5 h-5 mx-2.5 bg-gray-300 rounded-full inline-block transition-all duration-300">
-        <img src="/slider-pagination.svg" alt="Slider Pagination Icon" width="20" height="20" />
-      </span>`;
-            },
           }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          speed={1500}
           modules={[Pagination, Navigation]}
-          onBeforeInit={(swiper) => {
-            if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-            }
+          speed={1500}
+          onSwiper={(swiper) => {
+            
+            setTimeout(() => {
+              if (
+                prevRef.current &&
+                nextRef.current &&
+                swiper.params.navigation &&
+                typeof swiper.params.navigation !== "boolean"
+              ) {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }
+            });
           }}
           breakpoints={{
             640: {
-              // Small tablets
               slidesPerView: 1.5,
               spaceBetween: 20,
             },
             768: {
-              // Tablets
               slidesPerView: 1.8,
               spaceBetween: 25,
             },
             1024: {
-              // Small laptops
               slidesPerView: 1.8,
               spaceBetween: 30,
             },

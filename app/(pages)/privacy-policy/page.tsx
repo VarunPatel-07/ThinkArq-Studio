@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     description:
       "At Think Arq, we prioritize the privacy and security of our clients, partners, and website visitors. This Privacy Policy outlines how we collect, use, and protect your personal information in compliance with applicable data protection laws.",
     url: `https://thinkarq.com/`,
-    images: "/meta-images/think-arq.png",
+    images: "/meta-images/think-arq.jpg",
   },
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy | Think Arq - Think Build Disrupt",
     description:
       "At Think Arq, we prioritize the privacy and security of our clients, partners, and website visitors. This Privacy Policy outlines how we collect, use, and protect your personal information in compliance with applicable data protection laws.",
-    images: "/meta-images/think-arq.png",
+    images: "/meta-images/think-arq.jpg",
   },
 };
 function page() {

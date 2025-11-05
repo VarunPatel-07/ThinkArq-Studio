@@ -17,8 +17,8 @@ function Navbar() {
     <nav className="w-full border-b border-b-black/10 fixed top-0 left-0 bg-white z-50">
       <div className="think-arq-container">
         <div className="w-full flex items-center justify-between py-4">
-          <Link href={"/"} className="w-fit h-fit -ml-1">
-            <Image src={ThinkArqLogo} alt="ThinkArq Logo" width={140} height={50} />
+          <Link href={"/"} title="ThinkArq Logo" aria-label="ThinkArq Logo" className="w-fit h-fit -ml-1">
+            <Image src={ThinkArqLogo} alt="ThinkArq Logo" title="ThinkArq Logo" width={140} height={50} />
           </Link>
           <div
             className={classNames("w-fit h-fit flex gap-5 text-lg font-medium navbar-custom-css ", {
@@ -27,7 +27,7 @@ function Navbar() {
             <div className="w-fit h-fit flex gap-5 text-lg font-medium navbar-inner-wrapper">
               <div className="w-full flex items-center justify-between md:hidden">
                 <div className="w-fit h-fit">
-                  <Image src={ThinkArqLogo} alt="ThinkArq Logo" width={140} height={50} />
+                  <Image title="ThinkArq Logo" src={ThinkArqLogo} alt="ThinkArq Logo" width={140} height={50} />
                 </div>
                 <button className="mt-1 cursor-pointer" onClick={() => setShowMobileNavbar(false)}>
                   <IoIosCloseCircleOutline className="min-w-7 min-h-7" />
@@ -39,6 +39,8 @@ function Navbar() {
                     <Link
                       key={link.id}
                       href={link.href}
+                      title={link.label}
+                      aria-label={link.label}
                       className={classNames(
                         "font-space-grotesk font-medium text-lg hover:text-orange-500 flex items-center justify-center px-2.5 py-0.5 pb-1 rounded-md",
                         { "bg-[var(--highlight-color)]": pathname === link?.href }
