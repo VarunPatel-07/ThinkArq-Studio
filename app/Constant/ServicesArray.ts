@@ -57,10 +57,11 @@ export const ServicesArray: ServicesArrayInterface[] = [
       lottieIcon: "",
     },
     meta_data: {
-      title: "",
-      description: "",
+      title: "Boost Your Online Visibility with Expert SEO Services in USA & Europe",
+      description:
+        "Boost your online presence with the best SEO agency in USA and best SEO agency in Europe. Hire SEO experts from India who specialize in delivering top-notch SEO strategies for businesses targeting USA and Europe markets.",
       keywords: "",
-      og_image: "/meta-images/seo-service.png",
+      og_image: "/meta-images/seo-service.jpg",
     },
   },
   {
@@ -153,10 +154,11 @@ export const ServicesArray: ServicesArrayInterface[] = [
       lottieIcon: "",
     },
     meta_data: {
-      title: "",
-      description: "",
+      title: "PPC Advertising Services in USA & Europe | Paid Marketing Experts – Think Arq",
+      description:
+        "Maximize ROI with Think Arq’s PPC services in USA & Europe. Our certified experts create high-performing Google Ads and paid campaigns that drive instant results.",
       keywords: "",
-      og_image: "/meta-images/ppc-services.png",
+      og_image: "/meta-images/ppc-services.jpg",
     },
   },
   {
@@ -240,10 +242,11 @@ export const ServicesArray: ServicesArrayInterface[] = [
       lottieIcon: "",
     },
     meta_data: {
-      title: "",
-      description: "",
+      title: "Social Media Management Services in USA & Europe | Think Arq Experts",
+      description:
+        "Grow your brand with Think Arq’s social media management services in USA & Europe. We create powerful strategies that build visibility, engagement, and trust.",
       keywords: "",
-      og_image: "/meta-images/social-media-service.png",
+      og_image: "/meta-images/social-media-service.jpg",
     },
   },
   {
@@ -330,10 +333,11 @@ export const ServicesArray: ServicesArrayInterface[] = [
       lottieIcon: "",
     },
     meta_data: {
-      title: "",
-      description: "",
+      title: "Email Marketing Services in USA & Europe | Targeted Campaigns by Think Arq",
+      description:
+        "Boost conversions with Think Arq’s email marketing services in USA & Europe. We design data-driven campaigns that nurture leads and grow customer loyalty.",
       keywords: "",
-      og_image: "/meta-images/email-marketing-services.png",
+      og_image: "/meta-images/email-marketing-services.jpg",
     },
   },
   {
@@ -397,10 +401,11 @@ export const ServicesArray: ServicesArrayInterface[] = [
       lottieIcon: "",
     },
     meta_data: {
-      title: "",
-      description: "",
+      title: "Top UI/UX Design Company in USA & Europe | Creative User Experience Agency – Think Arq",
+      description:
+        "Think Arq delivers innovative UI/UX design services in USA & Europe. Our expert designers craft seamless, user-centric digital experiences that drive engagement and growth.",
       keywords: "",
-      og_image: "/meta-images/ui-ux-services.png",
+      og_image: "/meta-images/ui-ux-services.jpg",
     },
   },
 ];

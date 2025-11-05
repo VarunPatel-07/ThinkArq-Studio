@@ -43,9 +43,9 @@ function LetsConnect({
             </p>
           </div>
           <div className="flex flex-col items-start justify-around gap-5 md:gap-10 grow w-full">
-            <h6 className="font-space-grotesk text-xl font-bold text-black break-words">
+            <span className="font-space-grotesk text-xl font-bold text-black break-words">
               {data?.sub_title || `Lorem ipsum dolor, sit amet consectetur adipisicing elit.`}
-            </h6>
+            </span>
             <button
               className="w-full md:w-fit font-space-grotesk text-sm pt-3 pb-3.5 px-8 text-black bg-[#B9FF66] rounded-lg border-0 cursor-pointer lg:text-nowrap"
               onClick={onClickFunction}>

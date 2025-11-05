@@ -14,12 +14,10 @@ function RenderNavbarDropDown(props: RenderLinkDropDownInterface) {
   const [isDropDownOpen, setIsDropDownOpen] = React.useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // ✅ Close dropdown if parent opens another one
   useEffect(() => {
     if (isParentOpen) setIsDropDownOpen(false);
   }, [isParentOpen]);
 
-  // ✅ Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -78,6 +76,8 @@ function RenderNavbarDropDown(props: RenderLinkDropDownInterface) {
                 <Link
                   key={item.id}
                   href={item.href}
+                  title={item.label}
+                  aria-label={item.label}
                   className={classNames(
                     "px-5 py-3 text-lg font-medium text-gray-900 hover:bg-gray-100 font-space-grotesk flex items-center justify-between gap-4 w-full flex-nowrap overflow-hidden group",
                     { "bg-[var(--highlight-color)]": pathname === item?.href }
@@ -85,8 +85,7 @@ function RenderNavbarDropDown(props: RenderLinkDropDownInterface) {
                   style={{
                     borderBottom: index === link.dropDown.length - 1 ? "none" : "1px solid #eee",
                   }}
-                  onClick={() => setIsDropDownOpen(false)} // ✅ Close after clicking a link
-                >
+                  onClick={() => setIsDropDownOpen(false)}>
                   <span className="text-nowrap grow flex">{item.label}</span>
                   <HiArrowNarrowUp className="w-5 h-5 min-w-5 min-h-5 self-center rotate-45 group-hover:rotate-90 transition-transform duration-500 group-hover:text-orange-500" />
                 </Link>
