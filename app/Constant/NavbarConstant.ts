@@ -1,4 +1,5 @@
 import { NavbarLinksInterface } from "../interface/interface";
+import { HirePageArray } from "./HirePagesArray";
 import { ServicesArray } from "./ServicesArray";
 
 export const NavbarLinks: NavbarLinksInterface[] = [
@@ -12,6 +13,23 @@ export const NavbarLinks: NavbarLinksInterface[] = [
     target: "_self",
     dropDown: [
       ...(ServicesArray.map((item) => ({
+        id: item.id,
+        label: item.text,
+        href: item.href,
+        type: "link",
+        target: "_self",
+        dropDown: [],
+      })) as NavbarLinksInterface[]),
+    ],
+  },
+  {
+    id: "hire",
+    label: "Hire",
+    href: "/hire",
+    type: "link",
+    target: "_self",
+    dropDown: [
+      ...(HirePageArray.map((item) => ({
         id: item.id,
         label: item.text,
         href: item.href,

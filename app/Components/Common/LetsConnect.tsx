@@ -32,22 +32,28 @@ function LetsConnect({
             <h2 className="font-space-grotesk text-xl md:text-2xl lg:text-3xl font-semibold">
               {data?.title || "Ready To Elevate Your Side With"}
             </h2>
-            <span className="w-full h-[2px] inline-flex bg-[#191a23]"></span>
-            <p className="font-space-grotesk text-base">
-              {data?.description ||
-                `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum porro unde quasi eius reiciendis fugit
+            <span className="w-full h-0.5 inline-flex bg-[#191a23]"></span>
+            <p
+              className="font-space-grotesk text-base"
+              dangerouslySetInnerHTML={{
+                __html:
+                  data?.description ||
+                  `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum porro unde quasi eius reiciendis fugit
               suscipit, quo odit distinctio nesciunt itaque aspernatur voluptas quis ad iusto provident optio hic. Vero
               ex aliquam officiis harum nemo, impedit soluta tempore necessitatibus saepe architecto ut nostrum, fuga
               non similique dignissimos nobis placeat, at sed nihil libero sequi. Ut qui omnis nemo totam sequi ratione
-              eius`}
-            </p>
+              eius`,
+              }}></p>
           </div>
           <div className="flex flex-col items-start justify-around gap-5 md:gap-10 grow w-full">
-            <span className="font-space-grotesk text-xl font-bold text-black break-words">
-              {data?.sub_title || `Lorem ipsum dolor, sit amet consectetur adipisicing elit.`}
-            </span>
+            {data?.sub_title && (
+              <span className="font-space-grotesk text-xl font-bold text-black wrap-break-word">
+                {data?.sub_title || `Lorem ipsum dolor, sit amet consectetur adipisicing elit.`}
+              </span>
+            )}
+
             <button
-              className="w-full md:w-fit font-space-grotesk text-sm pt-3 pb-3.5 px-8 text-black bg-[#B9FF66] rounded-lg border-0 cursor-pointer lg:text-nowrap"
+              className="w-full md:w-fit font-space-grotesk text-sm pt-3 pb-3.5 px-8 text-black bg-[#B9FF66] rounded-lg border-0 cursor-pointer lg:text-nowrap xl:text-base"
               onClick={onClickFunction}>
               {data?.cta_button || `Subscribe to news`}
             </button>

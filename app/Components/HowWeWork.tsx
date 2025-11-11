@@ -36,7 +36,11 @@ function HowWeWork({
               </div>
               <div className="flex flex-col items-start justify-start gap-2">
                 <h3 className="font-space-grotesk text-lg md:text-xl lg:text-2xl font-bold">{item?.title}</h3>
-                <p className="font-space-grotesk text-sm lg:text-lg text-gray-500">{item?.description}</p>
+                <p
+                  className={`font-space-grotesk text-sm lg:text-lg ${
+                    item?.title !== "" ? "text-gray-500" : "text-gray-900 font-medium"
+                  }`}
+                  dangerouslySetInnerHTML={{ __html: item?.description }}></p>
               </div>
             </div>
           </div>

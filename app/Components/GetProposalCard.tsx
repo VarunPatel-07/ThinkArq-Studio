@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import ProposalIllustration from "../Assets/Images/proposal-illustration.webp";
+import Link from "next/link";
 
 function GetProposalCard() {
   return (
@@ -11,9 +12,13 @@ function GetProposalCard() {
           Let’s build something extraordinary — connect with Think Arq to explore how our web, AI, data, and marketing
           solutions can elevate your brand and accelerate growth.
         </p>
-        <button className="font-space-grotesk text-xl pt-2.5 pb-3 px-8 text-white bg-[#191A23] rounded-lg border-0 cursor-pointer">
+        <Link
+          href={"#contact-us"}
+          aria-label="Contact Us"
+          title="Contact Us"
+          className="font-space-grotesk text-xl pt-2.5 pb-3 px-8 text-white bg-[#191A23] rounded-lg border-0 cursor-pointer">
           Get Your Free Proposal
-        </button>
+        </Link>
       </div>
       <div className="absolute right-1/12 top-1/2 -translate-y-1/2 hidden lg:flex">
         <Image src={ProposalIllustration} alt="Proposal Illustration" width={360} height={400} />

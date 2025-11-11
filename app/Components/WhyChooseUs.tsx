@@ -7,10 +7,10 @@ function WhyChooseUs({ props }: { props: WhyChooseUsSectionInterface }) {
     <section className="py-20 px-6 bg-[#F3F3F3] rounded-[15px] md:rounded-[20px]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 lg:max-w-[80%] text-center mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 lg:mb-8 lg:max-w-[80%] text-center mx-auto">
             {title}
           </h2>
-          {subtitle && <p className="text-lg md:text-2xl text-gray-700 font-medium">{subtitle}</p>}
+          {subtitle && <p className="text-lg md:text-2xl text-gray-700 mb-4 font-medium">{subtitle}</p>}
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -18,12 +18,15 @@ function WhyChooseUs({ props }: { props: WhyChooseUsSectionInterface }) {
             <div className="space-y-6">
               {Array.isArray(description) ? (
                 description.map((paragraph, index) => (
-                  <p key={index} className="text-base lg:text-lg text-gray-700 leading-relaxed">
-                    {paragraph}
-                  </p>
+                  <p
+                    key={index}
+                    className="text-base lg:text-lg text-gray-700 leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: paragraph }}></p>
                 ))
               ) : (
-                <p className="text-base lg:text-lg text-gray-700 leading-relaxed">{description}</p>
+                <p
+                  className="text-base lg:text-lg text-gray-700 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: description || "" }}></p>
               )}
               {closingStatement && (
                 <p className="text-base lg:text-lg text-gray-900 font-semibold mt-8">{closingStatement}</p>
@@ -44,7 +47,7 @@ function WhyChooseUs({ props }: { props: WhyChooseUsSectionInterface }) {
                     className="bg-white rounded-xl p-6 lg:p-7 shadow-sm border border-gray-100 hover:shadow-md hover:border-lime-200 transition-all duration-300">
                     <div className="flex gap-4">
                       {/* Accent Dot */}
-                      <div className="flex-shrink-0 w-2 h-2 bg-lime-400 rounded-full mt-2"></div>
+                      <div className="flex shrink-0 w-2 h-2 bg-lime-400 rounded-full mt-2"></div>
 
                       <div className="flex-1">
                         {point.title.length > 0 && (
@@ -60,7 +63,9 @@ function WhyChooseUs({ props }: { props: WhyChooseUsSectionInterface }) {
               </div>
 
               {closingStatement && (
-                <p className="text-lg text-gray-900 font-semibold mt-12 text-center">{closingStatement}</p>
+                <p
+                  className="text-lg text-gray-900 font-semibold mt-12 text-center"
+                  dangerouslySetInnerHTML={{ __html: closingStatement }}></p>
               )}
             </div>
           )}

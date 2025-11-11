@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import countryData from "@/app/data/country-info.json";
 import Input from "./Common/Input";
 import TextArea from "./Common/TextArea";
@@ -14,6 +14,7 @@ import { ServicesArray } from "../Constant/ServicesArray";
 import { useSearchParams } from "next/navigation";
 import { formateAndVerifyPhoneNumber, isValidEmail, verifyPhoneNumberLength } from "../Helper/Helper";
 import { countryObject } from "../interface/interface";
+import { HirePageArray } from "../Constant/HirePagesArray";
 type FormDataType = {
   name: string;
   email: string;
@@ -44,12 +45,15 @@ function ThinkArqContactForm() {
   const [dropDownSelectedValue, setDropDownSelectedValue] = useState<string | number>("");
   const [countryOptionsDataArray, setCountryOptionsDataArray] = useState<Array<countryObject>>([]);
   const CountryDataRef = useRef(false);
-  // handle all input changes dynamically
+
+  const ServicesArrayOptions = useMemo(() => {
+    return [...ServicesArray, ...HirePageArray];
+  }, [ServicesArray, HirePageArray]);
+
   const handleInputChange = (key: string, value: string) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
   };
 
-  // handle dropdown selection
   const handleClickOnInquiryFormId = (data: string | object) => {
     if (typeof data === "string") {
       setFormData((prev) => ({ ...prev, service: data }));
@@ -81,7 +85,6 @@ function ThinkArqContactForm() {
         email: formData.email,
         phone_number: formData.phone_number,
         your_message: formData.your_message,
-        // country_info: dropDownSelectedValue,
       };
 
       if (dropDownSelectedValue !== "") {
@@ -166,13 +169,13 @@ function ThinkArqContactForm() {
     const serviceId = searchParams.get("service-id");
     if (serviceId) {
       setFormType("quote");
-      const data = ServicesArray.find((item) => item.id === serviceId);
+      const data = ServicesArrayOptions.find((item) => item.id === serviceId);
       if (data) setFormData((previousData) => ({ ...previousData, service: data.text }));
     }
   }, [searchParams]);
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full" id="contact-us">
       <CommanSectionHeader
         title="Contact Us"
         description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
@@ -278,7 +281,7 @@ function ThinkArqContactForm() {
                       selectedValue={formData?.service}
                       position="bottom"
                       emptyDataMessage="No services found"
-                      options={ServicesArray?.map((item) => item?.text)}
+                      options={ServicesArrayOptions?.map((item) => item?.text)}
                       label="Select Service"
                       isRequiredField
                       onSelectValBtn={handleClickOnInquiryFormId}
