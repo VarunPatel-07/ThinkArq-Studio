@@ -2,6 +2,9 @@
 
 @import "./css/variables.css";
 @import "./css/Font.css";
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--white-color);

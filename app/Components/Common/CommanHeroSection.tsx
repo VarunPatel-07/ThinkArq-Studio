@@ -32,22 +32,25 @@ function CommanHeroSection({
             />
           </div>
           <div className="w-full lg:w-1/2">
-            <h1 className="font-space-grotesk text-3xl lg:text-[42px] leading-[36px] lg:leading-[55px]   font-medium text-black">
+            <h1 className="font-space-grotesk text-3xl lg:text-[42px] leading-9 lg:leading-[55px]   font-medium text-black">
               {title}
             </h1>
             {Array.isArray(descriptions) ? (
               <>
                 <div className="pt-4 lg:pt-6 xl:pt-8 flex flex-col items-start justify-start gap-2.5">
                   {descriptions?.map((item, index) => (
-                    <p className="font-space-grotesk text-base lg:text-lg" key={index}>
-                      {item}
-                    </p>
+                    <p
+                      className="font-space-grotesk text-base lg:text-lg"
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: item }}></p>
                   ))}
                 </div>
               </>
             ) : (
               <>
-                <p className="pt-4 lg:pt-6 xl:pt-8 font-space-grotesk text-base lg:text-lg">{descriptions}</p>
+                <p
+                  className="pt-4 lg:pt-6 xl:pt-8 font-space-grotesk text-base lg:text-lg"
+                  dangerouslySetInnerHTML={{ __html: descriptions }}></p>
               </>
             )}
           </div>
