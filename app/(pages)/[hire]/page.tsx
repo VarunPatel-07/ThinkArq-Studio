@@ -2,23 +2,25 @@ import React from "react";
 import Navbar from "@/app/Components/Navbar/Navbar";
 import CommanHeroSection from "@/app/Components/Common/CommanHeroSection";
 import Footer from "@/app/Components/Footer";
-import { ServicesArray } from "@/app/Constant/ServicesArray";
+
 import OurServices from "@/app/Components/OurServices";
 import LetsConnect from "@/app/Components/Common/LetsConnect";
 import HowWeWork from "@/app/Components/HowWeWork";
 import WhyChooseUs from "@/app/Components/WhyChooseUs";
 import { Metadata } from "next";
+import { HirePageArray } from "@/app/Constant/HirePagesArray";
+import { ServicesArray } from "@/app/Constant/ServicesArray";
 
 export async function generateStaticParams() {
-  return ServicesArray.map((item) => ({
-    "service-slug": item.id, // must match your dynamic folder name
+  return HirePageArray.map((item) => ({
+    hire: item.id, // must match your dynamic folder name
   }));
 }
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-export async function generateMetadata({ params }: { params: { "service-slug": string } }): Promise<Metadata> {
-  const slug = params["service-slug"];
-  const data = ServicesArray.find((item) => item.id === slug);
+export async function generateMetadata({ params }: { params: { hire: string } }): Promise<Metadata> {
+  const slug = params["hire"];
+  const data = HirePageArray.find((item) => item.id === slug);
 
   if (!data) {
     return {
@@ -47,9 +49,9 @@ export async function generateMetadata({ params }: { params: { "service-slug": s
     alternates: { canonical: `${BASE_URL}${data?.href}` },
   };
 }
-export default function Page({ params }: { params: { "service-slug": string } }) {
-  const slug = params["service-slug"];
-  const data = ServicesArray.find((item) => item.id === slug);
+export default function Page({ params }: { params: { hire: string } }) {
+  const slug = params["hire"];
+  const data = HirePageArray.find((item) => item.id === slug);
 
   if (!data) return null;
 
