@@ -4,7 +4,7 @@ import ThinkArqContactForm from "@/app/Components/ThinkArqContactForm";
 import { OwnerInformation, PrivacyPolicyData } from "@/app/Constant/PrivacyPolicy";
 import { Metadata } from "next";
 import Link from "next/link";
-import React, { Suspense } from "react";
+import React, { Suspense} from "react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Think Arq - Think Build Disrupt",

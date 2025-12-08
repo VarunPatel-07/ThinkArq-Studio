@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "@/app/Components/Navbar/Navbar";
 import CommanHeroSection from "@/app/Components/Common/CommanHeroSection";
 import Footer from "@/app/Components/Footer";
@@ -9,7 +8,10 @@ import HowWeWork from "@/app/Components/HowWeWork";
 import WhyChooseUs from "@/app/Components/WhyChooseUs";
 import { Metadata } from "next";
 import { HirePageArray } from "@/app/Constant/HirePagesArray";
-import { ServicesArray } from "@/app/Constant/ServicesArray";
+import { DigitalMarketingServices } from "@/app/Constant/Services/DigitalMarketingServices";
+import { DataEngineeringServiceArray } from "@/app/Constant/Services/DataEngineeringService";
+import NotFound from "@/app/not-found";
+import { AiMlServicesDataArray } from "@/app/Constant/Services/Ai-Ml-Services";
 
 export async function generateStaticParams() {
   return HirePageArray.map((item) => ({
@@ -18,8 +20,9 @@ export async function generateStaticParams() {
 }
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-export async function generateMetadata({ params }: { params: { hire: string } }): Promise<Metadata> {
-  const slug = params["hire"];
+export async function generateMetadata({ params }: { params: Promise<{ "service-slug": string }> }): Promise<Metadata> {
+  const { "service-slug": slug } = await params;
+
   const data = HirePageArray.find((item) => item.id === slug);
 
   if (!data) {
@@ -30,30 +33,32 @@ export async function generateMetadata({ params }: { params: { hire: string } })
   }
 
   return {
-    title: data?.meta_data?.title,
-    description: data?.meta_data?.description,
-
+    title: data.meta_data?.title,
+    description: data.meta_data?.description,
     openGraph: {
-      title: data?.meta_data?.title,
-      description: data?.meta_data?.description,
-      url: `${BASE_URL}${data?.href}`,
-
-      images: data?.meta_data?.og_image,
+      title: data.meta_data?.title,
+      description: data.meta_data?.description,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}${data.href}`,
+      images: data.meta_data?.og_image,
     },
     twitter: {
       card: "summary_large_image",
-      title: data?.meta_data?.title,
-      description: data?.meta_data?.description,
-      images: data?.meta_data?.og_image,
+      title: data.meta_data?.title,
+      description: data.meta_data?.description,
+      images: data.meta_data?.og_image,
     },
-    alternates: { canonical: `${BASE_URL}${data?.href}` },
+    alternates: {
+      canonical: `${BASE_URL}${data.href}`,
+    },
   };
 }
-export default function Page({ params }: { params: { hire: string } }) {
-  const slug = params["hire"];
+export default async function Page({ params }: { params: Promise<{ hire: string }> }) {
+  const { hire: slug } = await params;
   const data = HirePageArray.find((item) => item.id === slug);
 
-  if (!data) return null;
+  const ServicesArrayOptions = [...DataEngineeringServiceArray, ...DigitalMarketingServices, ...AiMlServicesDataArray];
+
+  if (!data) return <NotFound />;
 
   return (
     <div className="w-full h-full">
@@ -78,7 +83,7 @@ export default function Page({ params }: { params: { hire: string } }) {
           <OurServices
             title={data?.other_service_title}
             description={data?.other_service_description}
-            ServicesData={ServicesArray.filter((item) => item.id !== slug)}
+            ServicesData={ServicesArrayOptions}
           />
         </div>
       </div>

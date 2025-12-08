@@ -86,7 +86,7 @@ export const HirePageArray: ServicesArrayInterface[] = [
       description:
         "Hire top Vibe Coders from Think Arq for innovative, high-performance websites and mobile apps. Trusted by global brands across USA & Europe for custom development, UX, and scalable digital solutions.",
       keywords: "",
-      og_image: "/meta-images/ui-ux-services.jpg",
+      og_image: "/meta-images/hire-vibe-coder.jpg",
     },
   },
   {
@@ -174,7 +174,7 @@ export const HirePageArray: ServicesArrayInterface[] = [
       description:
         "Hire skilled Cursor developers from Think Arq to build AI-driven, efficient, and automated coding workflows. Empower your business in the USA & Europe with tailored Cursor AI solutions.",
       keywords: "",
-      og_image: "/meta-images/ui-ux-services.jpg",
+      og_image: "/meta-images/hire-cursor-developer.jpg",
     },
   },
 ];
