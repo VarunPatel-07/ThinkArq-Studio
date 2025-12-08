@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { classNames, getServiceBg } from "../Helper/Helper";
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
@@ -12,6 +12,8 @@ const DotLottieReact = dynamic(() => import("@lottiefiles/dotlottie-react").then
   ssr: false,
 });
 
+const ITEMS_PER_LOAD = 4;
+
 function OurServices({
   title,
   description,
@@ -21,6 +23,13 @@ function OurServices({
   description?: string;
   ServicesData: ServicesArrayInterface[];
 }) {
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
+
+  const visibleServices = ServicesData.slice(0, visibleCount);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + ITEMS_PER_LOAD);
+  };
   return (
     <div className="w-full">
       <div className="w-full">
@@ -33,7 +42,7 @@ function OurServices({
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-16">
-        {ServicesData?.map((services, index) => (
+        {visibleServices?.map((services, index) => (
           <div
             key={services?.id}
             className="w-full h-full flex items-center justify-center cursor-pointer rounded-[15px] md:rounded-4xl transition-all duration-500 group hover:shadow-2xl odd:bg-[#B9FF66]! even:bg-[#F3F3F3]">
@@ -87,6 +96,15 @@ function OurServices({
           </div>
         ))}
       </div>
+      {visibleCount < ServicesData.length && (
+        <div className="w-full flex justify-center mt-16">
+          <button
+            onClick={handleLoadMore}
+            className="px-8 py-4 bg-[#191A23] text-white rounded-full font-semibold transition-all border-2 border-[#191A23] hover:bg-white hover:text-[#191A23] cursor-pointer">
+            Load More Services
+          </button>
+        </div>
+      )}
     </div>
   );
 }

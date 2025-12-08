@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  include: ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.d.ts"],
   webpack: (config) => {
     config.module.rules.push({
       test: /\.lottie$/,

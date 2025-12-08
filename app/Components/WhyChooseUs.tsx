@@ -7,10 +7,10 @@ function WhyChooseUs({ props }: { props: WhyChooseUsSectionInterface }) {
     <section className="py-20 px-6 bg-[#F3F3F3] rounded-[15px] md:rounded-[20px]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 lg:mb-8 lg:max-w-[80%] text-center mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 lg:mb-8 lg:max-w-[80%] text-center mx-auto font-space-grotesk">
             {title}
           </h2>
-          {subtitle && <p className="text-lg md:text-2xl text-gray-700 mb-4 font-medium">{subtitle}</p>}
+          {subtitle && <p className="text-lg font-dm-sans md:text-2xl text-gray-700 mb-4 font-medium">{subtitle}</p>}
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -20,22 +20,22 @@ function WhyChooseUs({ props }: { props: WhyChooseUsSectionInterface }) {
                 description.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="text-base lg:text-lg text-gray-700 leading-relaxed"
+                    className="text-base lg:text-lg font-dm-sans text-gray-700 leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: paragraph }}></p>
                 ))
               ) : (
                 <p
-                  className="text-base lg:text-lg text-gray-700 leading-relaxed"
+                  className="text-base lg:text-lg font-dm-sans text-gray-700 leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: description || "" }}></p>
               )}
               {closingStatement && (
-                <p className="text-base lg:text-lg text-gray-900 font-semibold mt-8">{closingStatement}</p>
+                <p className="text-base lg:text-lg text-gray-900 font-dm-sans font-semibold mt-8">{closingStatement}</p>
               )}
             </div>
           ) : (
             <div>
               {description && (
-                <p className="text-base lg:text-lg text-gray-700 leading-relaxed mb-12">
+                <p className="text-base lg:text-lg text-gray-700 font-dm-sans leading-relaxed mb-12">
                   {typeof description === "string" ? description : description[0]}
                 </p>
               )}
@@ -51,10 +51,10 @@ function WhyChooseUs({ props }: { props: WhyChooseUsSectionInterface }) {
 
                       <div className="flex-1">
                         {point.title.length > 0 && (
-                          <h3 className="text-lg lg:text-xl font-bold mb-2 text-gray-900">{point.title}</h3>
+                          <h3 className="text-lg font-space-grotesk lg:text-xl font-bold mb-2 text-gray-900">{point.title}</h3>
                         )}
                         {point.description.length > 0 && (
-                          <p className="text-gray-600 text-sm lg:text-base leading-relaxed">{point.description}</p>
+                          <p className="text-gray-600 text-sm lg:text-base leading-relaxed font-dm-sans">{point.description}</p>
                         )}
                       </div>
                     </div>

@@ -10,11 +10,13 @@ import BlackStarVector from "@/app/Assets/Images/black-star.svg";
 import GreenStarVector from "@/app/Assets/Images/green-star.svg";
 import SearchDrop from "./Common/SearchDrop";
 import CommanSectionHeader from "./Common/CommanSectionHeader";
-import { ServicesArray } from "../Constant/ServicesArray";
+import { AiMlServicesDataArray } from "../Constant/Services/Ai-Ml-Services";
 import { useSearchParams } from "next/navigation";
 import { formateAndVerifyPhoneNumber, isValidEmail, verifyPhoneNumberLength } from "../Helper/Helper";
 import { countryObject } from "../interface/interface";
 import { HirePageArray } from "../Constant/HirePagesArray";
+import { DataEngineeringServiceArray } from "../Constant/Services/DataEngineeringService";
+import { DigitalMarketingServices } from "../Constant/Services/DigitalMarketingServices";
 type FormDataType = {
   name: string;
   email: string;
@@ -47,8 +49,8 @@ function ThinkArqContactForm() {
   const CountryDataRef = useRef(false);
 
   const ServicesArrayOptions = useMemo(() => {
-    return [...ServicesArray, ...HirePageArray];
-  }, [ServicesArray, HirePageArray]);
+    return [...DataEngineeringServiceArray, ...DigitalMarketingServices, ...HirePageArray, ...AiMlServicesDataArray];
+  }, [DataEngineeringServiceArray, DigitalMarketingServices, HirePageArray, AiMlServicesDataArray]);
 
   const handleInputChange = (key: string, value: string) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
