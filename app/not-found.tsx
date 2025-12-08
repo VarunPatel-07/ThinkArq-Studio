@@ -30,7 +30,7 @@ function NotFound() {
         <p className="text-lg font-space-grotesk text-gray-600 mt-4 mb-8">The page you’re looking for doesn’t exist.</p>
         <Link
           href="/"
-          className="px-5 py-3 bg-[var(--theme-black-color)] text-white rounded-lg hover:bg-gray-800 transition-colors text-sm md:text-base lg:text-lg">
+          className="px-5 py-3 bg-(--theme-black-color) text-white rounded-lg hover:bg-gray-800 transition-colors text-sm md:text-base lg:text-lg">
           Go back home
         </Link>
       </main>

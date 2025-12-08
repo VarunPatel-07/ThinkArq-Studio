@@ -1,6 +1,9 @@
 import { NavbarLinksInterface } from "../interface/interface";
 import { HirePageArray } from "./HirePagesArray";
-import { ServicesArray } from "./ServicesArray";
+import { DigitalMarketingServices } from "./Services/DigitalMarketingServices";
+
+import { AiMlServicesDataArray } from "./Services/Ai-Ml-Services";
+import { DataEngineeringServiceArray } from "./Services/DataEngineeringService";
 
 export const NavbarLinks: NavbarLinksInterface[] = [
   { id: "home", label: "Home", href: "/", type: "link", target: "_self", dropDown: [] },
@@ -12,14 +15,57 @@ export const NavbarLinks: NavbarLinksInterface[] = [
     type: "link",
     target: "_self",
     dropDown: [
-      ...(ServicesArray.map((item) => ({
-        id: item.id,
-        label: item.text,
-        href: item.href,
+      {
+        id: "digital-marketing-services",
+        label: "Digital Marketing Services",
+        href: "/services",
         type: "link",
         target: "_self",
-        dropDown: [],
-      })) as NavbarLinksInterface[]),
+        dropDown: [
+          ...(DigitalMarketingServices.map((item) => ({
+            id: item.id,
+            label: item.text,
+            href: item.href,
+            type: "link",
+            target: "_self",
+            dropDown: [],
+          })) as NavbarLinksInterface[]),
+        ],
+      },
+      {
+        id: "data",
+        label: "Data",
+        href: "/services",
+        type: "link",
+        target: "_self",
+        dropDown: [
+          ...(DataEngineeringServiceArray.map((item) => ({
+            id: item.id,
+            label: item.text,
+            href: item.href,
+            type: "link",
+            target: "_self",
+            dropDown: [],
+          })) as NavbarLinksInterface[]),
+        ],
+      },
+      {
+        id: "ai-ml",
+        label: "AI/ML",
+        href: "/services",
+        type: "link",
+        target: "_self",
+        dropDown: [
+          ...(AiMlServicesDataArray.map((item) => ({
+            id: item.id,
+            label: item.text,
+            href: item.href,
+            type: "link",
+            target: "_self",
+            dropDown: [],
+          })) as NavbarLinksInterface[]),
+        ],
+      },
     ],
   },
   {

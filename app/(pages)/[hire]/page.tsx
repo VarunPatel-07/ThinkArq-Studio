@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Navbar from "@/app/Components/Navbar/Navbar";
 import CommanHeroSection from "@/app/Components/Common/CommanHeroSection";
 import Footer from "@/app/Components/Footer";
@@ -9,7 +9,10 @@ import HowWeWork from "@/app/Components/HowWeWork";
 import WhyChooseUs from "@/app/Components/WhyChooseUs";
 import { Metadata } from "next";
 import { HirePageArray } from "@/app/Constant/HirePagesArray";
-import { ServicesArray } from "@/app/Constant/ServicesArray";
+import { DigitalMarketingServices } from "@/app/Constant/Services/DigitalMarketingServices";
+import { DataEngineeringServiceArray } from "@/app/Constant/Services/DataEngineeringService";
+import NotFound from "@/app/not-found";
+import { AiMlServicesDataArray } from "@/app/Constant/Services/Ai-Ml-Services";
 
 export async function generateStaticParams() {
   return HirePageArray.map((item) => ({
@@ -53,7 +56,11 @@ export default function Page({ params }: { params: { hire: string } }) {
   const slug = params["hire"];
   const data = HirePageArray.find((item) => item.id === slug);
 
-  if (!data) return null;
+  const ServicesArrayOptions = useMemo(() => {
+    return [...DataEngineeringServiceArray, ...DigitalMarketingServices, ...AiMlServicesDataArray];
+  }, [DataEngineeringServiceArray, DigitalMarketingServices]);
+
+  if (!data) return <NotFound />;
 
   return (
     <div className="w-full h-full">
@@ -78,7 +85,7 @@ export default function Page({ params }: { params: { hire: string } }) {
           <OurServices
             title={data?.other_service_title}
             description={data?.other_service_description}
-            ServicesData={ServicesArray.filter((item) => item.id !== slug)}
+            ServicesData={ServicesArrayOptions}
           />
         </div>
       </div>

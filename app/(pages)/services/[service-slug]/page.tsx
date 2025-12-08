@@ -2,12 +2,17 @@ import React from "react";
 import Navbar from "@/app/Components/Navbar/Navbar";
 import CommanHeroSection from "@/app/Components/Common/CommanHeroSection";
 import Footer from "@/app/Components/Footer";
-import { ServicesArray } from "@/app/Constant/ServicesArray";
+import { DigitalMarketingServices } from "@/app/Constant/Services/DigitalMarketingServices";
 import OurServices from "@/app/Components/OurServices";
 import LetsConnect from "@/app/Components/Common/LetsConnect";
 import HowWeWork from "@/app/Components/HowWeWork";
 import WhyChooseUs from "@/app/Components/WhyChooseUs";
 import { Metadata } from "next";
+import { DataEngineeringServiceArray } from "@/app/Constant/Services/DataEngineeringService";
+import NotFound from "@/app/not-found";
+import { AiMlServicesDataArray } from "@/app/Constant/Services/Ai-Ml-Services";
+
+const ServicesArray = [...DigitalMarketingServices, ...DataEngineeringServiceArray, ...AiMlServicesDataArray];
 
 export async function generateStaticParams() {
   return ServicesArray.map((item) => ({
@@ -51,7 +56,7 @@ export default function Page({ params }: { params: { "service-slug": string } })
   const slug = params["service-slug"];
   const data = ServicesArray.find((item) => item.id === slug);
 
-  if (!data) return null;
+  if (!data) return <NotFound />;
 
   return (
     <div className="w-full h-full">

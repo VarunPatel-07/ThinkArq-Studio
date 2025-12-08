@@ -13,6 +13,7 @@ export interface RenderLinkDropDownInterface {
   data: NavbarLinksInterface;
   isParentOpen?: boolean;
   className?: string;
+  index: number;
 }
 
 export interface ServicesArrayInterface {
