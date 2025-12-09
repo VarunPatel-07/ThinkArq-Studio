@@ -99,7 +99,7 @@ function Input({
             placeholder={placeHolder}
             className={twMerge(
               clsx(
-                "border border-gray-500  px-7 py-3 bg-white w-full  text-black focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-[#191A23] font-space-grotesk text-sm md:text-lg !border-none placeholder:text-gray-500",
+                "border border-gray-500  px-7 py-3 bg-white w-full  text-black focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-[#191A23] font-space-grotesk text-sm md:text-lg !border-none placeholder:text-gray-500 disabled:bg-[#7fab98]/15 disabled:border disabled:border-[#7fab98] disabled:cursor-not-allowed",
                 className
               )
             )}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import countryData from "@/app/data/country-info.json";
 import Input from "./Common/Input";
 import TextArea from "./Common/TextArea";
@@ -17,6 +17,7 @@ import { countryObject } from "../interface/interface";
 import { HirePageArray } from "../Constant/HirePagesArray";
 import { DataEngineeringServiceArray } from "../Constant/Services/DataEngineeringService";
 import { DigitalMarketingServices } from "../Constant/Services/DigitalMarketingServices";
+import { NotificationContext, NotificationContextApiProps } from "../Context/Notification/NotificationContextApi";
 type FormDataType = {
   name: string;
   email: string;
@@ -33,10 +34,11 @@ const ORBIT_SAY_HI_FORM_ID = process.env.NEXT_PUBLIC_ORBIT_SAY_HI_FORM_ID;
 const ORBIT_GET_QUOTE_FORM_ID = process.env.NEXT_PUBLIC_ORBIT_GET_QUOTE_FORM_ID;
 
 function ThinkArqContactForm() {
+  const { handelNotification } = useContext(NotificationContext) as NotificationContextApiProps;
   const searchParams = useSearchParams();
   const [formType, setFormType] = React.useState<"contact" | "quote">("contact");
   const [showError, setShowError] = useState<boolean>(false);
-  const [mobileVerified, setMobileVerified] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
@@ -63,24 +65,23 @@ function ThinkArqContactForm() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     const is_verified = verifyPhoneNumberLength(
       formData.phone_number?.trim(),
       dropDownSelectedValue ? JSON.parse(dropDownSelectedValue as string)?.country_code : "IN"
     );
-    if (!is_verified) {
-      setMobileVerified(false);
-    } else {
-      setMobileVerified(true);
-    }
+
     if (
       !isValidEmail(formData?.email) ||
       formData?.name == "" ||
       formData?.phone_number == "" ||
-      formData?.your_message == ""
+      formData?.your_message == "" ||
+      !is_verified
     ) {
       setShowError(true);
+      return;
     } else {
-      e.preventDefault();
+      setLoading(true);
 
       const requestData: FormDataType = {
         name: formData.name,
@@ -114,9 +115,18 @@ function ThinkArqContactForm() {
         }
 
         const data = await response.json();
-        console.log("Success:", data);
+        if (data?.success) {
+          window.location.href = "/thank-you?source=contact";
+        } else {
+          handelNotification(
+            { success: data?.success || false, message: "Unable To Submit Your Response Right Now" },
+            "center"
+          );
+        }
+        setLoading(false);
       } catch (error) {
-        console.error("Error submitting form:", error);
+        setLoading(false);
+        handelNotification({ success: false, message: "Some Thing Went Wrong" }, "center");
       }
     }
   };
@@ -124,7 +134,7 @@ function ThinkArqContactForm() {
   const fetchAndFilterUserCountry = async () => {
     try {
       // Step 1: Get user country info from ipapi
-      const response = await fetch("https://ipapi.co/json/");
+      const response = await fetch("https://api.ipinfo.io/lite/me?token=13cd1dabec5b5b");
       if (!response.ok) throw new Error("Failed to fetch IP info");
 
       const data = await response.json();
@@ -218,19 +228,20 @@ function ThinkArqContactForm() {
                 <Input
                   label="Name"
                   placeHolder="Name"
-                  className="border border-black/30 text-black rounded-lg"
+                  className="border border-black/30 text-black rounded-lg bg-white"
                   type="text"
                   isRequiredField={true}
                   value={formData.name}
                   onChange={(e) => handleInputChange("name", e.target.value)}
                   showError={showError}
-                  errorMessage={showError && formData?.name !== "" ? "this is an required field" : ""}
+                  errorMessage={showError && formData?.name == "" ? "this is an required field" : ""}
+                  disabled={loading}
                 />
 
                 <Input
                   label="Email"
                   placeHolder="Email"
-                  className="border border-black/30 text-black rounded-lg"
+                  className="border border-black/30 text-black rounded-lg bg-white"
                   type="email"
                   isRequiredField={true}
                   value={formData.email}
@@ -245,11 +256,12 @@ function ThinkArqContactForm() {
                         : ""
                       : ""
                   }
+                  disabled={loading}
                 />
 
                 <Input
                   type="number"
-                  className="border border-black/30 text-black rounded-lg rounded-l-none"
+                  className="border border-black/30 text-black rounded-lg rounded-l-none bg-white"
                   label="Phone Number"
                   placeHolder="Phone Number"
                   isRequiredField={true}
@@ -258,22 +270,26 @@ function ThinkArqContactForm() {
                     dropDownSelectedValue ? JSON.parse(dropDownSelectedValue as string)?.country_code : "IN"
                   )}
                   onChange={(e) => handleInputChange("phone_number", e.target.value)}
-                  showError={(showError && formData.phone_number?.trim() == "") || !mobileVerified}
+                  showError={showError && formData.phone_number?.trim() == ""}
                   countryDropDownPosition="bottom"
                   dropDownSelectedValue={
                     dropDownSelectedValue ? JSON.parse(dropDownSelectedValue as string)?.country_number_code : "+91"
                   }
                   setDropDownSelectedValue={setDropDownSelectedValue}
                   errorMessage={
-                    showError && mobileVerified
+                    showError
                       ? formData?.phone_number?.trim() === ""
                         ? "This field is required."
                         : ""
-                      : !mobileVerified
+                      : !verifyPhoneNumberLength(
+                          formData.phone_number?.trim(),
+                          dropDownSelectedValue ? JSON.parse(dropDownSelectedValue as string)?.country_code : "IN"
+                        )
                       ? "Please Enter valid Phone No"
                       : ""
                   }
                   countryOptionsData={countryOptionsDataArray}
+                  disabled={loading}
                 />
 
                 {formType === "quote" && (
@@ -287,6 +303,9 @@ function ThinkArqContactForm() {
                       label="Select Service"
                       isRequiredField
                       onSelectValBtn={handleClickOnInquiryFormId}
+                      showError={showError}
+                      errorMessage={showError && formData?.service == "" ? "this is an required field" : ""}
+                      disabled={loading}
                     />
                   </div>
                 )}
@@ -297,12 +316,16 @@ function ThinkArqContactForm() {
                   isRequiredField={true}
                   value={formData.your_message}
                   onChange={(e) => handleInputChange("your_message", e.target.value)}
+                  showError={showError}
+                  errorMessage={showError && formData?.your_message == "" ? "this is an required field" : ""}
+                  disabled={loading}
                 />
 
                 <button
                   type="submit"
-                  className="font-space-grotesk text-xl pt-2.5 pb-3 px-8 text-white bg-[#191A23] rounded-lg border-0 cursor-pointer">
-                  Send Message
+                  className="font-space-grotesk text-xl pt-2.5 pb-3 px-8 text-white bg-[#191A23] rounded-lg border-0 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  disabled={loading}>
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </div>
