@@ -1,10 +1,23 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { useState, useEffect, useRef } from "react";
 import { FiCheckCircle } from "react-icons/fi";
 
 export default function ThankYouPageHelper() {
   const [visible, setVisible] = useState(false);
+  const searchParams = useSearchParams();
+  const hasRedirected = useRef(false);
+
+  useEffect(() => {
+    const source = searchParams.get("source");
+    if (!source && !hasRedirected.current) {
+      hasRedirected.current = true;
+      window.location.href = "/";
+    } else {
+      window.history.replaceState(null, "", "/thank-you");
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     setTimeout(() => setVisible(true), 100);
