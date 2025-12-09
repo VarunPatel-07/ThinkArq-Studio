@@ -154,7 +154,7 @@ export default function SearchDrop(props: SearchDropProps) {
           onKeyDown={handelKeyPress}
           ref={buttonRef}
           className={clsx(
-            "border border-black/30 rounded-xl px-7 py-3 bg-white w-full placeholder:text-[#898989] text-black focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-[#191A23] font-space-grotesk text-lg flex items-center justify-between",
+            "border border-black/30 rounded-xl px-7 py-3 bg-white w-full placeholder:text-[#898989] text-black focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-[#191A23] font-space-grotesk text-lg flex items-center justify-between disabled:bg-[#7fab98]/15 disabled:border disabled:border-[#7fab98] disabled:cursor-not-allowed",
             className
           )}
           style={{ border: showError && errorMessage ? "1px solid red" : "" }}

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { NotificationContextApiProvider } from "./Context/Notification/NotificationContextApi";
+import Notification from "./Components/Common/Notification/Notification";
 
 export const metadata: Metadata = {
   title: "Think Arq - Think Build Disrupt",
@@ -26,7 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body className={`antialiased`} id="body">{children}</body>
+      <body className={`antialiased`} id="body">
+        <NotificationContextApiProvider>
+          {children}
+          <Notification />
+        </NotificationContextApiProvider>
+      </body>
     </html>
   );
 }

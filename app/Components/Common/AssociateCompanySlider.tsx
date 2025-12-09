@@ -24,7 +24,6 @@ function AssociateCompanySlider() {
     { src: "/associates-logos/zoom.png", alt: "zoom" },
   ];
 
-  // console.log(images);
   return (
     <div className="pb-5 overflow-hidden">
       <div className="flex w-[100%] animate-marquee">
