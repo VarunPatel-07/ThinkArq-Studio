@@ -8,16 +8,22 @@ export default function ThankYouPageHelper() {
   const [visible, setVisible] = useState(false);
   const searchParams = useSearchParams();
   const hasRedirected = useRef(false);
-
   useEffect(() => {
     const source = searchParams.get("source");
-    if (!source && !hasRedirected.current) {
-      hasRedirected.current = true;
-      window.location.href = "/";
-    } else {
+
+    const navigationEntry = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+
+    const isReload = navigationEntry?.type === "reload";
+
+    if (isReload && !source) {
+      window.location.replace("/");
+      return;
+    }
+
+    if (source) {
       window.history.replaceState(null, "", "/thank-you");
     }
-  }, [searchParams]);
+  }, []);
 
   useEffect(() => {
     setTimeout(() => setVisible(true), 100);
