@@ -66,9 +66,9 @@ export default function Home() {
             <OurTeamIntro />
           </div>
         </div>
-        <div className="py-10 lg:py-12 xl:py-24 bg-[#F3F3F3]">
+        {/* <div className="py-10 lg:py-12 xl:py-24 bg-[#F3F3F3]">
           <Testimonials />
-        </div>
+        </div> */}
         <div className="pt-10 lg:pt-12 xl:pt-24">
           <div className="think-arq-container">
             <Suspense>
