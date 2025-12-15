@@ -235,8 +235,10 @@
 
 .font-dm-sans {
   font-family: "DM Sans", sans-serif;
+  font-display: swap;
 }
 
 .font-space-grotesk {
   font-family: "Space Grotesk", sans-serif;
+  font-display: swap;
 }
