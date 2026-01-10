@@ -15,14 +15,4 @@ export const ContactUsSectionInfo: ContactUsInfoInterface[] = [
     className: "",
     link: "mailto:contact.thinkarq@gmail.com",
   },
-  {
-    id: "address",
-    label: "Address",
-    value: "123, MG Road, Bengaluru, Karnataka, India",
-    className: "lg:flex-col items-start justify-start",
-    link: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-      "123, MG Road, Bengaluru, Karnataka, India"
-    )}`,
-    target: "_blank",
-  },
 ];
