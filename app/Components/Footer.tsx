@@ -1,21 +1,21 @@
 "use client";
-import React, { useContext, useState } from "react";
 import ThinkArqWhiteLogo from "@/app/Assets/Images/thinkarq-white-logo.webp";
-import Image from "next/image";
-import { NavbarLinks } from "../Constant/NavbarConstant";
-import Link from "next/link";
-import { SocialMediaLinksArray } from "../Constant/SocialMediaConstant";
-import { ContactUsSectionInfo } from "../Constant/CotactUsInfo";
 import clsx from "clsx";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useContext, useState } from "react";
+import { ContactUsSectionInfo } from "../Constant/CotactUsInfo";
+import { NavbarLinks } from "../Constant/NavbarConstant";
+import { SocialMediaLinksArray } from "../Constant/SocialMediaConstant";
 
 const BASE_URL = process.env.NEXT_PUBLIC_ORBIT_CONTACT_FORM_BASE_URL;
 const ORBIT_API_KEY = process.env.NEXT_PUBLIC_ORBIT_API_KEY;
 const ORBIT_API_SECRETE = process.env.NEXT_PUBLIC_ORBIT_API_SECRETE;
 const ORBIT_SUBSCRIBE_NEWS_LETTER = process.env.NEXT_PUBLIC_ORBIT_SUBSCRIBE_NEWS_LETTER;
 
-import Input from "./Common/Input";
 import { NotificationContext, NotificationContextApiProps } from "../Context/Notification/NotificationContextApi";
 import { isValidEmail } from "../Helper/Helper";
+import Input from "./Common/Input";
 function Footer() {
   const [email, setEmail] = useState<string>("");
   const [showError, setShowError] = useState<boolean>(false);
@@ -49,7 +49,7 @@ function Footer() {
         }
 
         const data = await response.json();
-     
+
         handelNotification(
           {
             success: data?.success,
@@ -97,12 +97,13 @@ function Footer() {
               <div className="w-fit items-center justify-center gap-5 hidden md:flex">
                 {SocialMediaLinksArray?.map((link) => (
                   <Link
-                    key={link.label}
-                    href={link.link}
-                    aria-label={link.label}
-                    title={link.label}
-                    className="text-[var(--theme-black-color)] bg-white font-space-grotesk text-lg font-medium flex items-center justify-center p-1.5 rounded-full">
-                    {link.icon}
+                    key={link?.label}
+                    href={link?.link}
+                    aria-label={link?.label}
+                    title={link?.label}
+                    target={link?.target}
+                    className="text-(--theme-black-color) bg-white font-space-grotesk text-lg font-medium flex items-center justify-center p-1.5 rounded-full">
+                    {link?.icon}
                   </Link>
                 ))}
               </div>
@@ -182,28 +183,38 @@ function Footer() {
               <div className="w-fit flex items-center justify-center gap-5">
                 {SocialMediaLinksArray?.map((link) => (
                   <Link
-                    key={link.label}
-                    href={link.link}
-                    aria-label={link.label}
-                    title={link.label}
+                    key={link?.label}
+                    href={link?.link}
+                    aria-label={link?.label}
+                    title={link?.label}
+                    target={link?.target}
                     className="text-(--theme-black-color) bg-white font-space-grotesk text-lg font-medium flex items-center justify-center p-1.5 rounded-full">
-                    {link.icon}
+                    {link?.icon}
                   </Link>
                 ))}
               </div>
             </div>
             <div className="border-t border-t-white md:mt-14 pt-10">
-              <div className="w-full flex items-center justify-between">
+              <div className="w-full flex-col gap-5 md:flex-row md:gap-0 flex items-center justify-between">
                 <p className="font-space-grotesk text-base text-white/70">
                   © {new Date().getFullYear()} ThinkArq Studios. All Rights Reserved.
                 </p>
-                <Link
-                  aria-label=" Privacy Policy"
-                  title="Privacy Policy"
-                  href="/privacy-policy"
-                  className="text-white/70 transition-all hover:text-white hover:underline">
-                  Privacy Policy
-                </Link>
+                <div className="flex items-center justify-end gap-10">
+                  <Link
+                    aria-label="Sitemap"
+                    title="Sitemap"
+                    href="/sitemap"
+                    className="text-white/70 transition-all hover:text-white hover:underline">
+                    Sitemap
+                  </Link>
+                  <Link
+                    aria-label=" Privacy Policy"
+                    title="Privacy Policy"
+                    href="/privacy-policy"
+                    className="text-white/70 transition-all hover:text-white hover:underline">
+                    Privacy Policy
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
