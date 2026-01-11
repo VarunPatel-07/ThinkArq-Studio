@@ -53,7 +53,7 @@ function OurServices({
               })}>
               <div className="flex items-stretch justify-start gap-4">
                 <div className="grow">
-                  <div className="w-full h-full flex flex-col items-start justify-between gap-sm-20">
+                  <div className="w-full h-full flex flex-col items-start justify-between gap-4!">
                     <h3 className="font-space-grotesk text-2xl font-semibold flex flex-col gap-1 items-start justify-start">
                       {services?.label?.map((text, i) => (
                         <span
@@ -71,17 +71,17 @@ function OurServices({
                       target={services?.target}
                       title={services?.services_title}
                       aria-label={`Learn more about ${services?.services_title}`}
-                      className="gap-2 bg-[#191A23] rounded-full w-12 h-12 flex items-center justify-end flex-nowrap transition-all duration-500 group-hover:w-48 overflow-hidden group/button">
+                      className="gap-2 bg-[#191A23] px-5 lg:p-0 rounded-full w-fit h-10 lg:w-12 lg:h-12 flex items-center justify-end flex-nowrap transition-all duration-500 lg:group-hover:w-48 overflow-hidden group/button">
                       {/* Keep service title visible for SEO but hidden visually */}
                       <span className="sr-only">{`Learn more about ${services?.services_title}`}</span>
-                      <span className="-translate-x-full opacity-0 group-hover:-translate-x-1/2 group-hover:opacity-100 text-white font-medium text-lg transition-all duration-300 text-nowrap">
+                      <span className="lg:-translate-x-full lg:opacity-0 lg:group-hover:-translate-x-1/2 group-hover:opacity-100 text-white font-medium text-lg transition-all duration-300 text-nowrap">
                         Learn More
                       </span>
-                      <HiArrowRight className="-translate-x-1/2 min-w-6 min-h-6 group-hover/button:-rotate-45 transition-all duration-300 text-white" />
+                      <HiArrowRight className="lg:-translate-x-1/2 lg:min-w-6 lg:min-h-6 group-hover/button:-rotate-45 transition-all duration-300 text-white" />
                     </Link>
                   </div>
                 </div>
-                <div className="min-w-[210px] min-h-[210px] w-[210px] h-[210px] d-sm-block">
+                <div className="min-w-[210px] min-h-[210px] w-[210px] h-[210px] hidden lg:block">
                   <DotLottieReact
                     src={services?.lottieIcon}
                     loop

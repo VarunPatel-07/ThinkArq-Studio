@@ -2,11 +2,12 @@ import Footer from "@/app/Components/Footer";
 import Navbar from "@/app/Components/Navbar/Navbar";
 import { SitemapItem } from "@/app/Components/SitemapItem";
 import { HirePageArray } from "@/app/Constant/HirePagesArray";
-import { NavbarLinks } from "@/app/Constant/NavbarConstant";
 import { AiMlServicesDataArray } from "@/app/Constant/Services/Ai-Ml-Services";
 import { DataEngineeringServiceArray } from "@/app/Constant/Services/DataEngineeringService";
 import { DigitalMarketingServices } from "@/app/Constant/Services/DigitalMarketingServices";
 import { Metadata } from "next";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const metadata: Metadata = {
   title: "Sitemap | Think Arq - Think Build Disrupt",
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     description:
       "Explore Think Arq Studios complete sitemap including services, solutions, technologies, work portfolio, about company and latest insights.",
     images: "/meta-images/think-arq.jpg",
+  },
+  alternates: {
+    canonical: `${BASE_URL}/sitemap`,
   },
 };
 

@@ -1,17 +1,17 @@
-import Navbar from "@/app/Components/Navbar/Navbar";
 import CommanHeroSection from "@/app/Components/Common/CommanHeroSection";
 import Footer from "@/app/Components/Footer";
+import Navbar from "@/app/Components/Navbar/Navbar";
 
-import OurServices from "@/app/Components/OurServices";
 import LetsConnect from "@/app/Components/Common/LetsConnect";
 import HowWeWork from "@/app/Components/HowWeWork";
+import OurServices from "@/app/Components/OurServices";
 import WhyChooseUs from "@/app/Components/WhyChooseUs";
-import { Metadata } from "next";
 import { HirePageArray } from "@/app/Constant/HirePagesArray";
-import { DigitalMarketingServices } from "@/app/Constant/Services/DigitalMarketingServices";
-import { DataEngineeringServiceArray } from "@/app/Constant/Services/DataEngineeringService";
-import NotFound from "@/app/not-found";
 import { AiMlServicesDataArray } from "@/app/Constant/Services/Ai-Ml-Services";
+import { DataEngineeringServiceArray } from "@/app/Constant/Services/DataEngineeringService";
+import { DigitalMarketingServices } from "@/app/Constant/Services/DigitalMarketingServices";
+import NotFound from "@/app/not-found";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   return HirePageArray.map((item) => ({
@@ -20,8 +20,8 @@ export async function generateStaticParams() {
 }
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-export async function generateMetadata({ params }: { params: Promise<{ "service-slug": string }> }): Promise<Metadata> {
-  const { "service-slug": slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ hire: string }> }): Promise<Metadata> {
+  const { hire: slug } = await params;
 
   const data = HirePageArray.find((item) => item.id === slug);
 

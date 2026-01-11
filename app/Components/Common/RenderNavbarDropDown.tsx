@@ -38,12 +38,16 @@ function RenderNavbarDropDown(props: RenderLinkDropDownInterface) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isDropDownOpen]);
+  console.log(pathname);
+  console.log(link?.dropDown);
 
   return (
     <div
       ref={dropdownRef}
       className={classNames("w-full flex items-start justify-start flex-col relative rounded-md", {
-        "md:bg-(--highlight-color)": Boolean(link?.dropDown?.find((item) => item?.href == pathname)),
+        "md:bg-(--highlight-color)": Boolean(
+          link?.dropDown?.find((item) => item?.href === pathname) || pathname === link?.href
+        ),
       })}>
       <div className="flex w-full items-center justify-start md:justify-center gap-1.5">
         <button

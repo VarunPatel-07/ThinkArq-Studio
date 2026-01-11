@@ -5,7 +5,7 @@ export const OurTeamIntroSection: TeamInfoInterface[] = [
     imagePath: "/team/jasmin-rajput.webp",
     name: "Jasmin Rajput",
     designation: "Founder",
-    linkedinUrl: "https://www.linkedin.com/in/jasmin-rajput-05b367395/",
+    linkedinUrl: "",
     description:
       "Jasmin Rajput is the Founder & CEO of Thinkarq, leading the company with the vision “Think, Build & Disrupt.",
   },
@@ -13,7 +13,7 @@ export const OurTeamIntroSection: TeamInfoInterface[] = [
     imagePath: "/team/vaibhav-rajput.webp",
     name: "Vaibhav Rajput",
     designation: "CEO",
-    linkedinUrl: "https://www.linkedin.com/in/vaibhav-rajput-1722bv",
+    linkedinUrl: "",
     description:
       "Vaibhav Rajput leads Thinkarq’s technology strategy, driving innovation through scalable digital solutions. He is passionate about building robust systems that help businesses grow in a rapidly evolving tech landscape.",
   },
@@ -21,7 +21,7 @@ export const OurTeamIntroSection: TeamInfoInterface[] = [
     imagePath: "/team/aarsh-shukla.png",
     name: "Aarsh Shukla",
     designation: "CSO",
-    linkedinUrl: "https://www.linkedin.com/in/aarsh-shukla-0a2638190/",
+    linkedinUrl: "",
     description:
       "Aarsh Shukla is the Chief Security Officer (CSO) at Thinkarq, leading the company’s cybersecurity strategy and risk management initiatives. He ensures robust security frameworks that protect digital assets, data, and client trust across all operations.",
   },

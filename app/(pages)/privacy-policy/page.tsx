@@ -4,7 +4,9 @@ import ThinkArqContactForm from "@/app/Components/ThinkArqContactForm";
 import { OwnerInformation, PrivacyPolicyData } from "@/app/Constant/PrivacyPolicy";
 import { Metadata } from "next";
 import Link from "next/link";
-import React, { Suspense} from "react";
+import { Suspense } from "react";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Think Arq - Think Build Disrupt",
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | Think Arq - Think Build Disrupt",
     description:
       "At Think Arq, we prioritize the privacy and security of our clients, partners, and website visitors. This Privacy Policy outlines how we collect, use, and protect your personal information in compliance with applicable data protection laws.",
-    url: `https://thinkarq.com/`,
+    url: `https://thinkarq.com/privacy-policy`,
     images: "/meta-images/think-arq.jpg",
   },
   twitter: {
@@ -23,6 +25,9 @@ export const metadata: Metadata = {
     description:
       "At Think Arq, we prioritize the privacy and security of our clients, partners, and website visitors. This Privacy Policy outlines how we collect, use, and protect your personal information in compliance with applicable data protection laws.",
     images: "/meta-images/think-arq.jpg",
+  },
+  alternates: {
+    canonical: `${BASE_URL}/privacy-policy`,
   },
 };
 function page() {
