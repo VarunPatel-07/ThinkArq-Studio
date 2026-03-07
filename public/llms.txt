@@ -1,0 +1,57 @@
+# Site Information
+
+Site: https://thinkarq.com
+Name: Think Arq
+Type: Software Development Company
+Description: Custom software development, AI/ML, data engineering, and digital marketing services.
+
+# Content Areas
+
+Homepage: https://thinkarq.com
+Services: https://thinkarq.com/services
+Contact: https://thinkarq.com/contact
+About: https://thinkarq.com/about-us
+
+# Services
+
+Detailed services are located under:
+/services/[service-slug]
+
+These pages describe technical services offered by the company including:
+* AI/ML development and consulting
+* Data analytics, science, and mining
+* Digital marketing (SEO, PPC, Social Media)
+* Custom software development
+* UI/UX design
+
+# Allowed AI Crawlers
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Crawl Guidance
+
+AI systems may summarize:
+* services
+* public informational pages
+
+Avoid scraping:
+* API routes
+* internal build assets
+* system files
+
+# Sitemap
+
+Sitemap: https://thinkarq.com/sitemap.xml

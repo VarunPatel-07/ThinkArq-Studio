@@ -5,11 +5,10 @@ import GetProposalCard from "./Components/GetProposalCard";
 import OurWorkingProcess from "./Components/OurWorkingProcess";
 import ThinkArqContactForm from "./Components/ThinkArqContactForm";
 import OurTeamIntro from "./Components/OurTeamIntro";
-import Testimonials from "./Components/Testimonials";
 import Footer from "./Components/Footer";
 import { Metadata } from "next";
 
-import { Suspense, useMemo } from "react";
+import { Suspense } from "react";
 import { DataEngineeringServiceArray } from "./Constant/Services/DataEngineeringService";
 import { DigitalMarketingServices } from "./Constant/Services/DigitalMarketingServices";
 import { AiMlServicesDataArray } from "./Constant/Services/Ai-Ml-Services";
@@ -29,10 +28,10 @@ export const metadata: Metadata = {
     images: "/meta-images/think-arq.jpg",
   },
 };
+
+const ServicesArrayOptions = [...DataEngineeringServiceArray, ...DigitalMarketingServices, ...AiMlServicesDataArray];
+
 export default function Home() {
-  const ServicesArrayOptions = useMemo(() => {
-    return [...DataEngineeringServiceArray, ...DigitalMarketingServices, ...AiMlServicesDataArray];
-  }, [DataEngineeringServiceArray, DigitalMarketingServices, AiMlServicesDataArray]);
   return (
     <>
       <div className="w-full h-full">
@@ -46,6 +45,7 @@ export default function Home() {
           <div className="think-arq-container h-full">
             <OurServices
               ServicesData={ServicesArrayOptions}
+              showPreviewOnly={true}
               description="At Think Arq, we craft meaningful digital experiences through UI/UX design, web and software development, AI-powered systems, data intelligence, and growth-driven marketing — building smarter brands for the connected world."
             />
           </div>
