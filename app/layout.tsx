@@ -1,8 +1,63 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import localFont from "next/font/local";
 import Notification from "./Components/Common/Notification/Notification";
 import { NotificationContextApiProvider } from "./Context/Notification/NotificationContextApi";
 import "./globals.css";
+
+const dmSans = localFont({
+  src: [
+    {
+      path: "./Assets/Fonts/DMSans/DMSans-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./Assets/Fonts/DMSans/DMSans-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./Assets/Fonts/DMSans/DMSans-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./Assets/Fonts/DMSans/DMSans-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const spaceGrotesk = localFont({
+  src: [
+    {
+      path: "./Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./Assets/Fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./Assets/Fonts/SpaceGrotesk/SpaceGrotesk-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Think Arq - Think Build Disrupt",
@@ -30,8 +85,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         {/* Google Tag Manager Script */}
         <Script
           id="gtm-script"

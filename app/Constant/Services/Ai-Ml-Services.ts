@@ -896,12 +896,12 @@ export const AiMlServicesDataArray: ServicesArrayInterface[] = [
   },
   {
     id: "ai-software-development",
-    label: ["LLM Development", "Services"],
-    text: "LLM Development Services",
+    label: ["AI Software Development", "Services"],
+    text: "AI Software Development",
     href: "/services/ai-software-development",
     type: "link",
     target: "_self",
-    lottieIcon: "/Lottie/llm-development-services.lottie",
+    lottieIcon: "/Lottie/ai-ml-development-services.lottie",
     services_title: "Build Intelligent, Scalable, Future-Ready Software Powered by AI",
     services_description: [
       "At Think Arq, we help businesses across the USA and Europe transform traditional systems into intelligent, data-driven, automated solutions through AI Software Development. Whether you need custom AI models, AI-powered platforms, enterprise automation, predictive systems, or a fully integrated AI ecosystem  we build high-performance, scalable, production-ready AI software tailored to your business goals.",
@@ -956,7 +956,7 @@ Includes: LLM chatbots, Voice AI assistants, Multilingual AI agents.`,
       title: "The Think Arq Difference",
       subtitle: "Why brands trust Think Arq for AI Software Development:",
       layout: "points",
-      description: ["Tailor-made, scalable AI architectures","Tailor-made, scalable AI architectures"],
+      description: ["Tailor-made, scalable AI architectures", "Tailor-made, scalable AI architectures"],
       closingStatement: "",
       points: [
         {
