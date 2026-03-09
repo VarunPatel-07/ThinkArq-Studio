@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+Disallow: /*.json$
+Disallow: /*.map$
+Disallow: /*.webmanifest$
+Disallow: /*.lottie$
+Disallow: /*.riv$
+Disallow: /*.mp4$
+Disallow: /*.webm$
+Disallow: /*favicon*
+Disallow: /*.ico$
+Disallow: /api/
+
+Allow: /_next/static/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+Sitemap: https://thinkarq.com/sitemap.xml
