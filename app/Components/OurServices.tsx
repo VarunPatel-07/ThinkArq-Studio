@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { classNames, getServiceBg } from "../Helper/Helper";
+import { useScrollReveal } from "../Helper/useScrollReveal";
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
 import CommanSectionHeader from "./Common/CommanSectionHeader";
@@ -13,19 +14,24 @@ const DotLottieReact = dynamic(() => import("@lottiefiles/dotlottie-react").then
 });
 
 const ITEMS_PER_LOAD = 4;
+const PREVIEW_COUNT = 6;
 
 function OurServices({
   title,
   description,
   ServicesData,
+  showPreviewOnly = false,
 }: {
   title?: string;
   description?: string;
   ServicesData: ServicesArrayInterface[];
+  showPreviewOnly?: boolean;
 }) {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
-
-  const visibleServices = ServicesData.slice(0, visibleCount);
+  useScrollReveal();
+  const visibleServices = showPreviewOnly
+    ? ServicesData.slice(0, PREVIEW_COUNT)
+    : ServicesData.slice(0, visibleCount);
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + ITEMS_PER_LOAD);
@@ -45,7 +51,7 @@ function OurServices({
         {visibleServices?.map((services, index) => (
           <div
             key={services?.id}
-            className="w-full h-full flex items-center justify-center cursor-pointer rounded-[15px] md:rounded-4xl transition-all duration-500 group hover:shadow-2xl odd:bg-[#B9FF66]! even:bg-[#F3F3F3]">
+            className="w-full h-full flex items-center justify-center cursor-pointer rounded-[15px] md:rounded-4xl transition-all duration-500 group hover:shadow-2xl odd:bg-[#B9FF66]! even:bg-[#F3F3F3] scroll-reveal card-hover">
             <div
               className={classNames(`w-full p-8 rounded-[15px] md:rounded-4xl border border-b-8 border-[#191A23]`, {
                 "md:bg-[#B9FF66]": !getServiceBg(index),
@@ -96,7 +102,20 @@ function OurServices({
           </div>
         ))}
       </div>
-      {visibleCount < ServicesData.length && (
+
+      {/* Preview mode: show "View All Services" link */}
+      {showPreviewOnly && ServicesData.length > PREVIEW_COUNT && (
+        <div className="w-full flex justify-center mt-16">
+          <Link
+            href="/services"
+            className="px-8 py-4 bg-[#191A23] text-white rounded-full font-semibold transition-all border-2 border-[#191A23] hover:bg-white hover:text-[#191A23] cursor-pointer font-space-grotesk text-lg">
+            View All Services
+          </Link>
+        </div>
+      )}
+
+      {/* Load More mode: for non-preview usage */}
+      {!showPreviewOnly && visibleCount < ServicesData.length && (
         <div className="w-full flex justify-center mt-16">
           <button
             onClick={handleLoadMore}

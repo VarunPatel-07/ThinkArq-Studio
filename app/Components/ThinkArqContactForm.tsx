@@ -152,7 +152,9 @@ function ThinkArqContactForm() {
         filteredCountry: matchedCountry,
       };
     } catch (error) {
-      console.error("Error fetching country:", error);
+      if (process.env.NODE_ENV === "development") {
+        console.error("Error fetching country:", error);
+      }
       const fallback = countryData.find((c) => c.country_code.toUpperCase() === "IN");
       return {
         success: true,

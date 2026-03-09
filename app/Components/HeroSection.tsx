@@ -27,7 +27,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="hidden md:flex w-1/2">
-          <Image src={HeroBannerIllustration} alt="Hero Banner Illustration" width={600} height={515} loading="lazy" />
+          <Image src={HeroBannerIllustration} alt="Hero Banner Illustration" width={600} height={515} priority />
         </div>
       </div>
       <AssociateCompanySlider />

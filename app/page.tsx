@@ -8,7 +8,7 @@ import OurTeamIntro from "./Components/OurTeamIntro";
 import OurWorkingProcess from "./Components/OurWorkingProcess";
 import ThinkArqContactForm from "./Components/ThinkArqContactForm";
 
-import { Suspense, useMemo } from "react";
+import { Suspense } from "react";
 import { AiMlServicesDataArray } from "./Constant/Services/Ai-Ml-Services";
 import { DataEngineeringServiceArray } from "./Constant/Services/DataEngineeringService";
 import { DigitalMarketingServices } from "./Constant/Services/DigitalMarketingServices";
@@ -34,10 +34,10 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}`,
   },
 };
+
+const ServicesArrayOptions = [...DataEngineeringServiceArray, ...DigitalMarketingServices, ...AiMlServicesDataArray];
+
 export default function Home() {
-  const ServicesArrayOptions = useMemo(() => {
-    return [...DataEngineeringServiceArray, ...DigitalMarketingServices, ...AiMlServicesDataArray];
-  }, [DataEngineeringServiceArray, DigitalMarketingServices, AiMlServicesDataArray]);
   return (
     <>
       <div className="w-full h-full">
@@ -51,6 +51,7 @@ export default function Home() {
           <div className="think-arq-container h-full">
             <OurServices
               ServicesData={ServicesArrayOptions}
+              showPreviewOnly={true}
               description="At Think Arq, we craft meaningful digital experiences through UI/UX design, web and software development, AI-powered systems, data intelligence, and growth-driven marketing — building smarter brands for the connected world."
             />
           </div>
@@ -71,9 +72,7 @@ export default function Home() {
             <OurTeamIntro />
           </div>
         </div>
-        {/* <div className="py-10 lg:py-12 xl:py-24 bg-[#F3F3F3]">
-          <Testimonials />
-        </div> */}
+
         <div className="pt-10 lg:pt-12 xl:pt-24">
           <div className="think-arq-container">
             <Suspense>
