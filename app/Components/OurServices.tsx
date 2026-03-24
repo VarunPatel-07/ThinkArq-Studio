@@ -6,12 +6,7 @@ import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
 import CommanSectionHeader from "./Common/CommanSectionHeader";
 import { ServicesArrayInterface } from "../interface/interface";
-import dynamic from "next/dynamic";
-
-// Dynamically import with SSR disabled
-const DotLottieReact = dynamic(() => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact), {
-  ssr: false,
-});
+import LazyLottie from "./Common/LazyLottie";
 
 const ITEMS_PER_LOAD = 4;
 const PREVIEW_COUNT = 6;
@@ -88,7 +83,7 @@ function OurServices({
                   </div>
                 </div>
                 <div className="min-w-[210px] min-h-[210px] w-[210px] h-[210px] d-sm-block">
-                  <DotLottieReact
+                  <LazyLottie
                     src={services?.lottieIcon}
                     loop
                     autoplay
