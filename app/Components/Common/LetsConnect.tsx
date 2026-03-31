@@ -1,13 +1,8 @@
 "use client";
 import React from "react";
 
-import dynamic from "next/dynamic";
 import Link from "next/link";
-
-// Dynamically import with SSR disabled
-const DotLottieReact = dynamic(() => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact), {
-  ssr: false,
-});
+import LazyLottie from "./LazyLottie";
 
 function LetsConnect({
   data,
@@ -54,7 +49,7 @@ function LetsConnect({
           </div>
         </div>
         <div className="w-full lg:w-1/2 hidden lg:flex">
-          <DotLottieReact
+          <LazyLottie
             src={data?.lottieIcon || "/Lottie/lets-connect.lottie"}
             loop
             autoplay
