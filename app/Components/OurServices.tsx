@@ -1,17 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import Link from "next/link";
+import { useState } from "react";
+import { HiArrowRight } from "react-icons/hi";
 import { classNames, getServiceBg } from "../Helper/Helper";
 import { useScrollReveal } from "../Helper/useScrollReveal";
-import Link from "next/link";
-import { HiArrowRight } from "react-icons/hi";
-import CommanSectionHeader from "./Common/CommanSectionHeader";
 import { ServicesArrayInterface } from "../interface/interface";
-import dynamic from "next/dynamic";
-
-// Dynamically import with SSR disabled
-const DotLottieReact = dynamic(() => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact), {
-  ssr: false,
-});
+import CommanSectionHeader from "./Common/CommanSectionHeader";
+import LazyLottie from "./Common/LazyLottie";
 
 const ITEMS_PER_LOAD = 4;
 const PREVIEW_COUNT = 6;
@@ -29,9 +24,7 @@ function OurServices({
 }) {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
   useScrollReveal();
-  const visibleServices = showPreviewOnly
-    ? ServicesData.slice(0, PREVIEW_COUNT)
-    : ServicesData.slice(0, visibleCount);
+  const visibleServices = showPreviewOnly ? ServicesData.slice(0, PREVIEW_COUNT) : ServicesData.slice(0, visibleCount);
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + ITEMS_PER_LOAD);
@@ -87,8 +80,8 @@ function OurServices({
                     </Link>
                   </div>
                 </div>
-                <div className="min-w-[210px] min-h-[210px] w-[210px] h-[210px] hidden lg:block">
-                  <DotLottieReact
+                <div className="min-w-[210px] min-h-[210px] w-[210px] h-[210px] d-sm-block">
+                  <LazyLottie
                     src={services?.lottieIcon}
                     loop
                     autoplay
