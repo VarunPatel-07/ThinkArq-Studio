@@ -9,22 +9,35 @@ import { DigitalMarketingServices } from "@/app/Constant/Services/DigitalMarketi
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sitemap | Think Arq - Think Build Disrupt",
+  title: "Sitemap | Think Arq — Explore All Services & Solutions",
   description:
-    "Explore Think Arq Studios complete sitemap including services, solutions, technologies, work portfolio, about company and latest insights.",
+    "Explore Think Arq's complete sitemap including AI development, data engineering, digital marketing, software development services, and hiring solutions.",
+  alternates: {
+    canonical: "https://www.thinkarq.com/sitemap",
+  },
   openGraph: {
-    title: "Sitemap | Think Arq - Think Build Disrupt",
+    title: "Sitemap | Think Arq — Explore All Services & Solutions",
     description:
-      "Explore Think Arq Studios complete sitemap including services, solutions, technologies, work portfolio, about company and latest insights.",
-    url: `https://thinkarq.com/`,
-    images: "/meta-images/think-arq.jpg",
+      "Explore Think Arq's complete sitemap including AI development, data engineering, digital marketing services, and hiring solutions.",
+    url: "https://www.thinkarq.com/sitemap",
+    siteName: "Think Arq",
+    images: [
+      {
+        url: "/meta-images/think-arq.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Think Arq Sitemap",
+      },
+    ],
+    type: "website",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sitemap | Think Arq - Think Build Disrupt",
+    title: "Sitemap | Think Arq — Explore All Services & Solutions",
     description:
-      "Explore Think Arq Studios complete sitemap including services, solutions, technologies, work portfolio, about company and latest insights.",
-    images: "/meta-images/think-arq.jpg",
+      "Explore Think Arq's complete sitemap including AI development, data engineering, and digital marketing services.",
+    images: ["/meta-images/think-arq.jpg"],
   },
 };
 

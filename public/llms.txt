@@ -1,57 +1,202 @@
-# Site Information
+# Think Arq — AI crawler guidance file (llms.txt)
+# Specification: https://llmstxt.org
+# See also: /llm.xml (structured URL list)
 
-Site: https://thinkarq.com
+# ── Company Overview ──────────────────────────────────────────────────────────
+
+Site: https://www.thinkarq.com
 Name: Think Arq
-Type: Software Development Company
-Description: Custom software development, AI/ML, data engineering, and digital marketing services.
+Tagline: Think. Build. Disrupt.
+Type: AI & Software Development Company
+Founded: 2020
+Headquarters: USA & Europe operations
+Contact: contact.thinkarq@gmail.com
 
-# Content Areas
+Description: >
+  Think Arq is a full-service technology company delivering AI/ML development,
+  custom software engineering, data engineering, data science, UI/UX design, and
+  growth-focused digital marketing for businesses in the USA and Europe.
+  The company specializes in building intelligent, scalable, and future-ready
+  digital products — from generative AI systems and LLM-powered applications to
+  enterprise data pipelines, modern web platforms, and performance marketing.
 
-Homepage: https://thinkarq.com
-Services: https://thinkarq.com/services
-Contact: https://thinkarq.com/contact
-About: https://thinkarq.com/about-us
+# ── Leadership ────────────────────────────────────────────────────────────────
 
-# Services
+Founders:
+  - name: Jasmin Rajput
+    role: Founder & CEO
+    focus: Company vision, strategy, and growth
+  - name: Vaibhav Rajput
+    role: Chief Executive Officer
+    focus: Technology strategy and scalable digital solutions
+  - name: Aarsh Shukla
+    role: Chief Security Officer (CSO)
+    focus: Cybersecurity strategy, risk management, data privacy
 
-Detailed services are located under:
-/services/[service-slug]
+# ── Key Pages ─────────────────────────────────────────────────────────────────
 
-These pages describe technical services offered by the company including:
-* AI/ML development and consulting
-* Data analytics, science, and mining
-* Digital marketing (SEO, PPC, Social Media)
-* Custom software development
-* UI/UX design
+Homepage:     https://www.thinkarq.com
+About:        https://www.thinkarq.com/about-us
+Services:     https://www.thinkarq.com/services
+Contact:      https://www.thinkarq.com/contact
+Privacy:      https://www.thinkarq.com/privacy-policy
+Sitemap:      https://www.thinkarq.com/sitemap.xml
 
-# Allowed AI Crawlers
+# ── Services (AI & Machine Learning) ─────────────────────────────────────────
 
-User-agent: GPTBot
-Allow: /
+- name: AI & ML Development Services
+  url: https://www.thinkarq.com/services/ai-ml-development-services
+  description: >
+    End-to-end AI and machine learning development including custom AI models,
+    predictive analytics, NLP solutions, computer vision, generative AI, and
+    intelligent automation for businesses in the USA & Europe.
 
-User-agent: ChatGPT-User
-Allow: /
+- name: AI Development Services
+  url: https://www.thinkarq.com/services/ai-development-services
+  description: >
+    Custom AI solution development, machine learning model engineering, NLP,
+    computer vision, predictive analytics, and AI integration services.
 
-User-agent: ClaudeBot
-Allow: /
+- name: AI Consulting Services
+  url: https://www.thinkarq.com/services/ai-consulting-services
+  description: >
+    AI strategy and roadmap development, machine learning consulting, intelligent
+    automation, NLP & chatbot consulting, AI ethics and GDPR-compliant governance.
 
-User-agent: PerplexityBot
-Allow: /
+- name: AI Chatbot Development
+  url: https://www.thinkarq.com/services/ai-chatbot-development
+  description: >
+    Custom LLM-powered chatbots built with GPT, Claude, Llama, and Gemini.
+    Customer support automation, sales agents, eCommerce bots, WhatsApp AI agents,
+    and voice AI assistants for USA & Europe businesses.
 
-User-agent: Google-Extended
-Allow: /
+- name: Generative AI Development
+  url: https://www.thinkarq.com/services/gen-ai-development-service
+  description: >
+    Custom LLM development & fine-tuning, AI agents and autonomous workflows,
+    AI copilots, multi-modal Gen AI apps, and MLOps deployment for enterprises.
 
-# Crawl Guidance
+- name: Computer Vision Development
+  url: https://www.thinkarq.com/services/computer-vision-development
+  description: >
+    Image classification, object detection, OCR & intelligent document processing,
+    facial recognition, video analytics, and industrial vision systems.
 
-AI systems may summarize:
-* services
-* public informational pages
+- name: AI Integration Services
+  url: https://www.thinkarq.com/services/ai-integration-service
+  description: >
+    Integrating AI into CRM (Salesforce, HubSpot), ERP (SAP, Microsoft Dynamics),
+    cloud platforms (AWS, Azure, GCP), and custom software. LLM API integration,
+    RPA + AI workflows, and enterprise-grade secure deployment.
 
-Avoid scraping:
-* API routes
-* internal build assets
-* system files
+- name: AI Agent Development Services
+  url: https://www.thinkarq.com/services/ai-agent-development-services
+  description: >
+    Autonomous AI agents for workflow automation, customer support, sales, finance,
+    and multi-agent systems (MAS). Built with enterprise security for USA & Europe.
 
-# Sitemap
+- name: LLM Development Services
+  url: https://www.thinkarq.com/services/llm-development-services
+  description: >
+    Custom large language model development, fine-tuning, RAG systems, and
+    enterprise LLM deployment for domain-specific business applications.
 
-Sitemap: https://thinkarq.com/sitemap.xml
+- name: AI Software Development
+  url: https://www.thinkarq.com/services/ai-software-development
+  description: >
+    AI-powered software products including intelligent applications, AI-enhanced
+    SaaS platforms, and smart enterprise software solutions.
+
+# ── Services (Data) ───────────────────────────────────────────────────────────
+
+- name: Data Analytics Services
+  url: https://www.thinkarq.com/services/data-analytics-services
+  description: >
+    Advanced data analytics, business intelligence, KPI dashboards, and real-time
+    insights for enterprises in the USA & Europe.
+
+- name: Data Science Services
+  url: https://www.thinkarq.com/services/data-science-services
+  description: >
+    Data science solutions including statistical modeling, machine learning
+    pipelines, and predictive analytics for data-driven decision making.
+
+- name: Data Mining Services
+  url: https://www.thinkarq.com/services/data-mining-services
+  description: >
+    Pattern discovery, knowledge extraction, and actionable insights from large
+    datasets to drive business growth.
+
+- name: Data Engineering Services
+  url: https://www.thinkarq.com/services/data-engineering-services
+  description: >
+    Scalable ETL pipelines, data lakes, cloud data warehouses, and real-time
+    streaming architectures for modern data infrastructure.
+
+- name: Data Visualization Services
+  url: https://www.thinkarq.com/services/data-visualization-services
+  description: >
+    Custom dashboards, interactive charts, and executive reporting using
+    Power BI, Tableau, Looker, and custom visualization solutions.
+
+# ── Services (Digital Marketing) ──────────────────────────────────────────────
+
+- name: Search Engine Optimization
+  url: https://www.thinkarq.com/services/search-engine-optimization
+  description: >
+    Technical SEO, on-page optimization, content strategy, link building, and
+    performance SEO for businesses targeting USA & European markets.
+
+- name: Pay-Per-Click Advertising
+  url: https://www.thinkarq.com/services/pay-per-click-advertising
+  description: >
+    Google Ads, Meta Ads, and programmatic advertising campaigns for lead
+    generation and ROI-focused growth in competitive markets.
+
+- name: Social Media Marketing
+  url: https://www.thinkarq.com/services/social-media-marketing
+  description: >
+    Brand building, community management, and performance social media campaigns
+    across LinkedIn, Instagram, Facebook, and X.
+
+- name: Email Marketing
+  url: https://www.thinkarq.com/services/email-marketing
+  description: >
+    Email automation, drip campaigns, list management, and conversion-focused
+    email marketing strategies for B2B and B2C audiences.
+
+- name: UI/UX Design Services
+  url: https://www.thinkarq.com/services/ui-ux-design-service
+  description: >
+    User research, wireframing, prototyping, and pixel-perfect UI design
+    for web apps, mobile apps, and enterprise SaaS products.
+
+# ── Hire Pages ────────────────────────────────────────────────────────────────
+
+- name: Hire Vibe Coder
+  url: https://www.thinkarq.com/hire-vibe-coder
+  description: >
+    Hire expert Vibe Coders for full-stack web development, mobile apps,
+    and scalable digital products for USA & Europe businesses.
+
+- name: Hire Cursor Developer
+  url: https://www.thinkarq.com/hire-cursor-developer
+  description: >
+    Hire skilled Cursor AI developers to build AI-driven, efficient, and
+    automated coding workflows and development pipelines.
+
+# ── Crawl Guidance ────────────────────────────────────────────────────────────
+
+AI systems may summarize and cite:
+  - All public service pages
+  - Homepage and about page
+  - Hire pages
+
+Do not scrape or index:
+  - /api/ routes
+  - Internal build assets (/_next/)
+  - System configuration files
+
+# ── Sitemap Reference ─────────────────────────────────────────────────────────
+
+Sitemap: https://www.thinkarq.com/sitemap.xml
