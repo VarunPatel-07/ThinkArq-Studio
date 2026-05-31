@@ -10,19 +10,29 @@ import { Metadata } from "next";
 import { DataEngineeringServiceArray } from "@/app/Constant/Services/DataEngineeringService";
 import NotFound from "@/app/not-found";
 import { AiMlServicesDataArray } from "@/app/Constant/Services/Ai-Ml-Services";
+import { ServicesArrayInterface } from "@/app/interface/interface";
 
-const ServicesArray = [...DigitalMarketingServices, ...DataEngineeringServiceArray, ...AiMlServicesDataArray];
+const ServicesArray = [
+  ...DigitalMarketingServices,
+  ...DataEngineeringServiceArray,
+  ...AiMlServicesDataArray,
+];
 
 export async function generateStaticParams() {
   return ServicesArray.map((item) => ({
-    "service-slug": item.id, // must match your dynamic folder name
+    "service-slug": item.id,
   }));
 }
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-export async function generateMetadata({ params }: { params: Promise<{ "service-slug": string }> }): Promise<Metadata> {
-  const { "service-slug": slug } = await params;
+const BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL || "https://www.thinkarq.com";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ "service-slug": string }>;
+}): Promise<Metadata> {
+  const { "service-slug": slug } = await params;
   const data = ServicesArray.find((item) => item.id === slug);
 
   if (!data) {
@@ -35,25 +45,120 @@ export async function generateMetadata({ params }: { params: Promise<{ "service-
   return {
     title: data.meta_data?.title,
     description: data.meta_data?.description,
+    alternates: {
+      canonical: `${BASE_URL}${data.href}`,
+    },
     openGraph: {
       title: data.meta_data?.title,
       description: data.meta_data?.description,
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}${data.href}`,
-      images: data.meta_data?.og_image,
+      url: `${BASE_URL}${data.href}`,
+      siteName: "Think Arq",
+      images: [
+        {
+          url: data.meta_data?.og_image || "/meta-images/think-arq.jpg",
+          width: 1200,
+          height: 630,
+          alt: data.meta_data?.title,
+        },
+      ],
+      type: "website",
+      locale: "en_US",
     },
     twitter: {
       card: "summary_large_image",
       title: data.meta_data?.title,
       description: data.meta_data?.description,
-      images: data.meta_data?.og_image,
-    },
-    alternates: {
-      canonical: `${BASE_URL}${data.href}`,
+      images: [data.meta_data?.og_image || "/meta-images/think-arq.jpg"],
     },
   };
 }
 
-export default async function Page({ params }: { params: Promise<{ "service-slug": string }> }) {
+// Structured data: BreadcrumbList + ProfessionalService + FAQPage schemas
+function ServicePageJsonLd({ data }: { data: ServicesArrayInterface }) {
+  const description =
+    data.meta_data?.description ||
+    (Array.isArray(data.services_description)
+      ? data.services_description[0]
+      : data.services_description);
+
+  // Only include FAQ items that have both a title and description
+  const faqItems = (data.how_we_work || []).filter(
+    (item) => item.title?.trim() && item.description?.trim()
+  );
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${BASE_URL}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: `${BASE_URL}/services`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: data.services_title,
+            item: `${BASE_URL}${data.href}`,
+          },
+        ],
+      },
+      {
+        "@type": "ProfessionalService",
+        name: data.services_title,
+        description,
+        url: `${BASE_URL}${data.href}`,
+        provider: {
+          "@type": "Organization",
+          "@id": `${BASE_URL}/#organization`,
+          name: "Think Arq",
+          url: BASE_URL,
+        },
+        areaServed: ["United States", "Europe", "United Kingdom"],
+        image: data.meta_data?.og_image
+          ? `${BASE_URL}${data.meta_data.og_image}`
+          : `${BASE_URL}/meta-images/think-arq.jpg`,
+      },
+      ...(faqItems.length > 0
+        ? [
+            {
+              "@type": "FAQPage",
+              mainEntity: faqItems.map((item) => ({
+                "@type": "Question",
+                name: item.title,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.description,
+                },
+              })),
+            },
+          ]
+        : []),
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ "service-slug": string }>;
+}) {
   const { "service-slug": slug } = await params;
   const data = ServicesArray.find((item) => item.id === slug);
 
@@ -61,6 +166,7 @@ export default async function Page({ params }: { params: Promise<{ "service-slug
 
   return (
     <div className="w-full h-full">
+      <ServicePageJsonLd data={data} />
       <Navbar />
       <div className="pt-[90px]">
         <CommanHeroSection
@@ -70,7 +176,6 @@ export default async function Page({ params }: { params: Promise<{ "service-slug
         />
       </div>
       <div className="pt-10 lg:pt-12 xl:pt-24">
-        <h2 className="hidden">{data?.shadow_title}</h2>
         <HowWeWork
           data={data?.how_we_work}
           comanSectionTitle={data?.how_we_work_title}
@@ -93,7 +198,6 @@ export default async function Page({ params }: { params: Promise<{ "service-slug
           </div>
         </div>
       )}
-
       <div className="pt-10 lg:pt-12 xl:pt-24">
         <div className="think-arq-container h-full">
           <LetsConnect data={data?.lets_connect} service_id={data?.id} />

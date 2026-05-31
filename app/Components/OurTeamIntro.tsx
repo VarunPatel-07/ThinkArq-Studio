@@ -7,8 +7,8 @@ function OurTeamIntro() {
   return (
     <div className="w-full h-full">
       <CommanSectionHeader
-        title="Team"
-        description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+        title="Meet Our Team"
+        description="Behind Think Arq is a passionate team of AI engineers, software developers, data scientists, designers, and digital marketers — united by a shared mission to Think, Build, and Disrupt."
       />
 
       <div className="w-full pt-8 lg:pt-14 xl:pt-20 transition-all">

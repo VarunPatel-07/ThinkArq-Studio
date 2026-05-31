@@ -1,17 +1,13 @@
+# ── General crawl rules ───────────────────────────────────────────────────────
 User-agent: *
 Allow: /
 
-Disallow: /*.json$
-Disallow: /*.map$
-Disallow: /*.webmanifest$
-Disallow: /*.lottie$
-Disallow: /*.riv$
-Disallow: /*.mp4$
-Disallow: /*.webm$
-Disallow: /*favicon*
-Disallow: /*.ico$
+# Block server-side build artifacts and internal assets
 Disallow: /api/
+Disallow: /_next/server/
+Disallow: /_next/webpack-hmr
 
+# Allow Next.js static assets (CSS, JS, fonts, images)
 Allow: /_next/static/
 Allow: /*.jpg$
 Allow: /*.jpeg$
@@ -19,4 +15,47 @@ Allow: /*.png$
 Allow: /*.webp$
 Allow: /*.svg$
 
-Sitemap: https://thinkarq.com/sitemap.xml
+# ── AI search crawler rules ───────────────────────────────────────────────────
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
+# Google Gemini / AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Amazon Alexa / Amazonbot
+User-agent: Amazonbot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+# ── Sitemap ───────────────────────────────────────────────────────────────────
+Sitemap: https://www.thinkarq.com/sitemap.xml
