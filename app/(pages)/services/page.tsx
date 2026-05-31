@@ -6,7 +6,7 @@ import { DataEngineeringServiceArray } from "@/app/Constant/Services/DataEnginee
 import { DigitalMarketingServices } from "@/app/Constant/Services/DigitalMarketingServices";
 import { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://thinkarq.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.thinkarq.com";
 
 const AllServices = [...DigitalMarketingServices, ...DataEngineeringServiceArray, ...AiMlServicesDataArray];
 

@@ -14,6 +14,9 @@ function HeroSection() {
               <span className="block">Think.</span> <span className="block">Build.</span>{" "}
               <span className="block">Disrupt.</span>
             </h1>
+            <p className="font-space-grotesk text-sm font-semibold uppercase tracking-widest text-[#B9FF66] bg-[#191A23] inline-flex px-3 py-1 rounded-md -mt-2">
+              AI Development · Data Engineering · Digital Marketing
+            </p>
             <p className="font-space-grotesk text-lg md:mt-4 text-gray-600">
               At Think Arq, we blend creativity with intelligence — delivering sleek UI/UX, robust web and software
               solutions, AI and data-driven insights, and growth-focused digital marketing to help businesses scale

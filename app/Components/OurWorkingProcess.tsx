@@ -9,7 +9,7 @@ function OurWorkingProcess() {
       <div className="w-full">
         <CommanSectionHeader
           title="Our Working Process"
-          description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+          description="At Think Arq, we follow a proven, results-driven process — from discovery and strategy to design, development, AI integration, and continuous optimization — ensuring every project delivers measurable business impact."
         />
       </div>
 

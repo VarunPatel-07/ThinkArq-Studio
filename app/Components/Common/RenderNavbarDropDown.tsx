@@ -43,8 +43,7 @@ function RenderNavbarDropDown(props: RenderLinkDropDownInterface) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isDropDownOpen]);
-  console.log(pathname);
-  console.log(link?.dropDown);
+
 
   // Cleanup timeouts on unmount
   useEffect(() => {
