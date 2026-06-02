@@ -1,11 +1,10 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
 
-const DotLottieReact = dynamic(
-  () => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
-  { ssr: false }
-);
+const DotLottieReact = dynamic(() => import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact), {
+  ssr: false,
+});
 
 interface LazyLottieProps {
   src: string;
@@ -16,14 +15,7 @@ interface LazyLottieProps {
   height?: number;
 }
 
-export default function LazyLottie({
-  src,
-  loop = true,
-  autoplay = true,
-  className,
-  width,
-  height,
-}: LazyLottieProps) {
+export default function LazyLottie({ src, loop = true, autoplay = true, className, width, height }: LazyLottieProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -38,7 +30,7 @@ export default function LazyLottie({
           observer.disconnect();
         }
       },
-      { rootMargin: "200px" }
+      { rootMargin: "200px" },
     );
 
     observer.observe(el);
@@ -46,7 +38,7 @@ export default function LazyLottie({
   }, []);
 
   return (
-    <div ref={ref} style={{ width, height }} className={className}>
+    <div ref={ref} style={{ width: "100%", height: "100%" }} className={className}>
       {isVisible && (
         <DotLottieReact
           src={src}

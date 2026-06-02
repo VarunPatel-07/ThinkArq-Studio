@@ -22,8 +22,8 @@ function CommanHeroSection({
               loop
               autoplay
               className="w-full h-full"
-              width={210}
-              height={210}
+              width={300}
+              height={300}
             />
           </div>
           <div className="w-full lg:w-1/2">
